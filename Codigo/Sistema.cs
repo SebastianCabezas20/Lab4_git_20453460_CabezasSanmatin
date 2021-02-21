@@ -107,19 +107,23 @@ namespace Codigo
             }
         }
 
-        /*Perimte crear una pregunta y agregarla al stack
-        @param titulo, titulo de la pregunta
-        @param contenido, el contenido de la pregunta
-        @param etiquetas, pertenece a la clase ListaEtiquetas 
-        
-        public void ask(String titulo, String contenido, ListaEtiquetas etiquetas)
+        public bool ask(String titulo, ListaEtiquetas etiquetas, String contenido)
         {
-            // Se crea la pregunta
-            Pregunta pregunta = new Pregunta(this.IDgeneral, titulo, contenido, etiquetas, this.listaUsuarios.getUsuario(this.indexActivo).getUsername());
-            this.listaPreguntas.agregarPregunta(pregunta);
-            this.IDgeneral = this.IDgeneral + 1; // suma ID general
-            System.out.println("PREGUNTA REALIZADA CON EXITO");
+            if (titulo != "" && contenido != "")
+            {
+                // Se crea la pregunta
+                Pregunta pregunta = new Pregunta(this.IDgeneral, titulo, contenido, etiquetas, this.listaUsuarios.getUsuario(this.indexActivo).getUsername());
+                this.listaPreguntas.agregarPregunta(pregunta);
+                this.IDgeneral = this.IDgeneral + 1; // suma ID general
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
+       
         /*Perimte agregar una respuesta a una determinada pregunta
         @param ID, ID de la pregunta a responder
         @param contenido, contenido de la respuesta 

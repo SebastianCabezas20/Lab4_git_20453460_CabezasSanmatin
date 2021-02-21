@@ -58,6 +58,12 @@
     <Compile Include="FormaPrincipal.Designer.cs">
       <DependentUpon>FormaPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PreguntaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreguntaForm.Designer.cs">
+      <DependentUpon>PreguntaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Datos.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaPrincipal.resx">
       <DependentUpon>FormaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreguntaForm.resx">
+      <DependentUpon>PreguntaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

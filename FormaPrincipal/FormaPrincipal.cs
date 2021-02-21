@@ -71,5 +71,35 @@ namespace FormaPrincipal
                 }
             }
         }
+
+        private void buttonSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void buttonAgregarPregunta_Click(object sender, EventArgs e)
+        {
+            PreguntaForm preguntaForm = new PreguntaForm(sistema);
+
+            if (preguntaForm.ShowDialog() == DialogResult.OK)
+            {
+                if (sistema.ask(preguntaForm.getTitulo(), preguntaForm.getListaEtiquetas, preguntaForm.getContenido()))
+                {
+                    //Guardar la ultima pregunta de la lista en el datagridview
+                    int index = dataGridViewPreguntas.Rows.Add();
+                    dataGridViewPreguntas.Rows[index].Cells[0].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getTitulo();
+                    dataGridViewPreguntas.Rows[index].Cells[1].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getContenido();
+                    dataGridViewPreguntas.Rows[index].Cells[2].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getID();
+                    dataGridViewPreguntas.Rows[index].Cells[3].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).GetDate;
+                    dataGridViewPreguntas.Rows[index].Cells[4].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getAutor();
+
+                    MessageBox.Show("Pregunta realizada con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Error al completar el formulario");
+                }
+            }
+        }
     }
 }

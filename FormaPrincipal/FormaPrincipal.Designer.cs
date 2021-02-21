@@ -34,6 +34,15 @@ namespace FormaPrincipal
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
+            this.dataGridViewPreguntas = new System.Windows.Forms.DataGridView();
+            this.buttonSalir = new System.Windows.Forms.Button();
+            this.buttonAgregarPregunta = new System.Windows.Forms.Button();
+            this.ColumnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnContenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTitulo
@@ -84,11 +93,79 @@ namespace FormaPrincipal
             this.buttonLogout.UseVisualStyleBackColor = true;
             this.buttonLogout.Click += new System.EventHandler(this.button3_Click);
             // 
+            // dataGridViewPreguntas
+            // 
+            this.dataGridViewPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPreguntas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnTitulo,
+            this.ColumnContenido,
+            this.ColumnID,
+            this.ColumnFecha,
+            this.ColumnAutor});
+            this.dataGridViewPreguntas.Location = new System.Drawing.Point(178, 126);
+            this.dataGridViewPreguntas.Name = "dataGridViewPreguntas";
+            this.dataGridViewPreguntas.ReadOnly = true;
+            this.dataGridViewPreguntas.Size = new System.Drawing.Size(540, 150);
+            this.dataGridViewPreguntas.TabIndex = 7;
+            // 
+            // buttonSalir
+            // 
+            this.buttonSalir.Location = new System.Drawing.Point(590, 18);
+            this.buttonSalir.Name = "buttonSalir";
+            this.buttonSalir.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalir.TabIndex = 8;
+            this.buttonSalir.Text = "Salir";
+            this.buttonSalir.UseVisualStyleBackColor = true;
+            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
+            // 
+            // buttonAgregarPregunta
+            // 
+            this.buttonAgregarPregunta.Location = new System.Drawing.Point(107, 340);
+            this.buttonAgregarPregunta.Name = "buttonAgregarPregunta";
+            this.buttonAgregarPregunta.Size = new System.Drawing.Size(124, 23);
+            this.buttonAgregarPregunta.TabIndex = 9;
+            this.buttonAgregarPregunta.Text = "Agregar pregunta";
+            this.buttonAgregarPregunta.UseVisualStyleBackColor = true;
+            this.buttonAgregarPregunta.Click += new System.EventHandler(this.buttonAgregarPregunta_Click);
+            // 
+            // ColumnTitulo
+            // 
+            this.ColumnTitulo.HeaderText = "Titulo";
+            this.ColumnTitulo.Name = "ColumnTitulo";
+            this.ColumnTitulo.ReadOnly = true;
+            // 
+            // ColumnContenido
+            // 
+            this.ColumnContenido.HeaderText = "Contenido";
+            this.ColumnContenido.Name = "ColumnContenido";
+            this.ColumnContenido.ReadOnly = true;
+            // 
+            // ColumnID
+            // 
+            this.ColumnID.HeaderText = "ID";
+            this.ColumnID.Name = "ColumnID";
+            this.ColumnID.ReadOnly = true;
+            // 
+            // ColumnFecha
+            // 
+            this.ColumnFecha.HeaderText = "Fecha";
+            this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
+            // 
+            // ColumnAutor
+            // 
+            this.ColumnAutor.HeaderText = "Autor";
+            this.ColumnAutor.Name = "ColumnAutor";
+            this.ColumnAutor.ReadOnly = true;
+            // 
             // FormaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAgregarPregunta);
+            this.Controls.Add(this.buttonSalir);
+            this.Controls.Add(this.dataGridViewPreguntas);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonRegister);
             this.Controls.Add(this.buttonLogin);
@@ -96,6 +173,7 @@ namespace FormaPrincipal
             this.Controls.Add(this.labelTitulo);
             this.Name = "FormaPrincipal";
             this.Text = "Forma Principal";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +186,14 @@ namespace FormaPrincipal
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.DataGridView dataGridViewPreguntas;
+        private System.Windows.Forms.Button buttonSalir;
+        private System.Windows.Forms.Button buttonAgregarPregunta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTitulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContenido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAutor;
     }
 }
 
