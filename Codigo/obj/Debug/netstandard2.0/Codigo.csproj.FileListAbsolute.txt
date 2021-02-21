@@ -1,0 +1,9 @@
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\bin\Debug\netstandard2.0\Codigo.deps.json
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\bin\Debug\netstandard2.0\Codigo.dll
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\bin\Debug\netstandard2.0\Codigo.pdb
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\obj\Debug\netstandard2.0\Codigo.csprojAssemblyReference.cache
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\obj\Debug\netstandard2.0\Codigo.AssemblyInfoInputs.cache
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\obj\Debug\netstandard2.0\Codigo.AssemblyInfo.cs
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\obj\Debug\netstandard2.0\Codigo.csproj.CoreCompileInputs.cache
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\obj\Debug\netstandard2.0\Codigo.dll
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Codigo\obj\Debug\netstandard2.0\Codigo.pdb

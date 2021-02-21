@@ -1,0 +1,14 @@
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\bin\Debug\FormaPrincipal.exe.config
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\bin\Debug\FormaPrincipal.exe
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\bin\Debug\FormaPrincipal.pdb
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\bin\Debug\Codigo.dll
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\bin\Debug\Codigo.pdb
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\Formas.csprojAssemblyReference.cache
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.Datos.resources
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.FormaPrincipal.resources
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.Properties.Resources.resources
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\Formas.csproj.GenerateResource.cache
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\Formas.csproj.CoreCompileInputs.cache
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\Formas.csproj.CopyComplete
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.exe
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.pdb

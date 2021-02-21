@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Codigo
 {
-    class ListaUsuarios
+    public class ListaUsuarios
     {
         private List<Usuario> listaUsuarios; // ArrayList que contendra los usuarios
         /*Crea una lista de usuarios*/
