@@ -123,25 +123,15 @@ namespace Codigo
             }
         }
 
-       
-        /*Perimte agregar una respuesta a una determinada pregunta
-        @param ID, ID de la pregunta a responder
-        @param contenido, contenido de la respuesta 
-        
         public void answer(int ID, String contenido)
         {
-            if (!this.listaPreguntas.verificarIDPregunta(ID))
-            { //Verificar que exista la pregunta
-                System.out.println("EL ID INGRESADO NO EXISTE");
-            }
-            else
-            {
-                Respuesta respuesta = new Respuesta(this.IDgeneral, contenido, this.listaUsuarios.getUsuario(this.indexActivo).getUsername(), ID);
-                this.listaRespuestas.agregarRespuesta(respuesta);
-                this.IDgeneral = this.IDgeneral + 1; //Aumenta ID general
-                System.out.println("RESPUESTA REALIZADA CON EXITO");
-            }
+            Respuesta respuesta = new Respuesta(this.IDgeneral, contenido, this.listaUsuarios.getUsuario(this.indexActivo).getUsername(), ID);
+            this.listaRespuestas.agregarRespuesta(respuesta);
+            this.IDgeneral = this.IDgeneral + 1; //Aumenta ID general
+
         }
+
+       
         /*Perimte agregar recompensa a una determinada pregunta
         @param ID, ID de la pregunta a ofrecer recompensa
         @param recompensa, recompensa a ofrecer 

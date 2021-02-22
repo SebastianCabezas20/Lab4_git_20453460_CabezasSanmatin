@@ -101,5 +101,17 @@ namespace FormaPrincipal
                 }
             }
         }
+
+        private void dataGridViewPreguntas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            //AD.T,Ind
+            
+            int ID = Convert.ToInt32(dataGridViewPreguntas.Rows[index].Cells[2].Value);//Conseguir el ID de la pregunta
+            Respuestas formRespuestas = new Respuestas(sistema, ID);//Forma de la pregunta
+            formRespuestas.ShowDialog();//Mostrar
+            //ADV.Re.Lal
+            
+        }
     }
 }

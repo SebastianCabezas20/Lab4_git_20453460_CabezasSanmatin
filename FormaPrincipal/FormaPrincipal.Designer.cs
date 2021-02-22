@@ -35,13 +35,13 @@ namespace FormaPrincipal
             this.buttonRegister = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.dataGridViewPreguntas = new System.Windows.Forms.DataGridView();
-            this.buttonSalir = new System.Windows.Forms.Button();
-            this.buttonAgregarPregunta = new System.Windows.Forms.Button();
             this.ColumnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnContenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonSalir = new System.Windows.Forms.Button();
+            this.buttonAgregarPregunta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,6 +95,7 @@ namespace FormaPrincipal
             // 
             // dataGridViewPreguntas
             // 
+            this.dataGridViewPreguntas.AllowUserToAddRows = false;
             this.dataGridViewPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPreguntas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTitulo,
@@ -103,30 +104,12 @@ namespace FormaPrincipal
             this.ColumnFecha,
             this.ColumnAutor});
             this.dataGridViewPreguntas.Location = new System.Drawing.Point(178, 126);
+            this.dataGridViewPreguntas.MultiSelect = false;
             this.dataGridViewPreguntas.Name = "dataGridViewPreguntas";
             this.dataGridViewPreguntas.ReadOnly = true;
             this.dataGridViewPreguntas.Size = new System.Drawing.Size(540, 150);
             this.dataGridViewPreguntas.TabIndex = 7;
-            // 
-            // buttonSalir
-            // 
-            this.buttonSalir.Location = new System.Drawing.Point(590, 18);
-            this.buttonSalir.Name = "buttonSalir";
-            this.buttonSalir.Size = new System.Drawing.Size(75, 23);
-            this.buttonSalir.TabIndex = 8;
-            this.buttonSalir.Text = "Salir";
-            this.buttonSalir.UseVisualStyleBackColor = true;
-            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
-            // 
-            // buttonAgregarPregunta
-            // 
-            this.buttonAgregarPregunta.Location = new System.Drawing.Point(107, 340);
-            this.buttonAgregarPregunta.Name = "buttonAgregarPregunta";
-            this.buttonAgregarPregunta.Size = new System.Drawing.Size(124, 23);
-            this.buttonAgregarPregunta.TabIndex = 9;
-            this.buttonAgregarPregunta.Text = "Agregar pregunta";
-            this.buttonAgregarPregunta.UseVisualStyleBackColor = true;
-            this.buttonAgregarPregunta.Click += new System.EventHandler(this.buttonAgregarPregunta_Click);
+            this.dataGridViewPreguntas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPreguntas_CellDoubleClick);
             // 
             // ColumnTitulo
             // 
@@ -157,6 +140,26 @@ namespace FormaPrincipal
             this.ColumnAutor.HeaderText = "Autor";
             this.ColumnAutor.Name = "ColumnAutor";
             this.ColumnAutor.ReadOnly = true;
+            // 
+            // buttonSalir
+            // 
+            this.buttonSalir.Location = new System.Drawing.Point(590, 18);
+            this.buttonSalir.Name = "buttonSalir";
+            this.buttonSalir.Size = new System.Drawing.Size(75, 23);
+            this.buttonSalir.TabIndex = 8;
+            this.buttonSalir.Text = "Salir";
+            this.buttonSalir.UseVisualStyleBackColor = true;
+            this.buttonSalir.Click += new System.EventHandler(this.buttonSalir_Click);
+            // 
+            // buttonAgregarPregunta
+            // 
+            this.buttonAgregarPregunta.Location = new System.Drawing.Point(107, 340);
+            this.buttonAgregarPregunta.Name = "buttonAgregarPregunta";
+            this.buttonAgregarPregunta.Size = new System.Drawing.Size(124, 23);
+            this.buttonAgregarPregunta.TabIndex = 9;
+            this.buttonAgregarPregunta.Text = "Agregar pregunta";
+            this.buttonAgregarPregunta.UseVisualStyleBackColor = true;
+            this.buttonAgregarPregunta.Click += new System.EventHandler(this.buttonAgregarPregunta_Click);
             // 
             // FormaPrincipal
             // 

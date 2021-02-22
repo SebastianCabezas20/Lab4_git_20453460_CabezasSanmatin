@@ -13,3 +13,4 @@ C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\Form
 C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.exe
 C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.pdb
 C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.PreguntaForm.resources
+C:\Users\Sebastián\Desktop\LAB4_Paradigmas\Lab4_204534608_CabezasSanmartin\FormaPrincipal\obj\Debug\FormaPrincipal.Respuestas.resources
