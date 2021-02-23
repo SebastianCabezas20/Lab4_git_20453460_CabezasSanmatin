@@ -131,40 +131,25 @@ namespace Codigo
 
         }
 
-       
-        /*Perimte agregar recompensa a una determinada pregunta
-        @param ID, ID de la pregunta a ofrecer recompensa
-        @param recompensa, recompensa a ofrecer 
-        
-        public void reward(int ID, int recompensa)
+        public bool reward(int ID, int recompensa)
         {
-            //Verificar que exista ID pregunta
-            if (this.listaPreguntas.verificarIDPregunta(ID))
+
+            if (recompensa <= this.listaUsuarios.getUsuario(this.indexActivo).getReputacionRelativa())
             {
-                if (!this.listaPreguntas.getPregunta(ID).getEstado())
-                {//Verificar que no haya sido respondida
-                    if (recompensa <= this.listaUsuarios.getUsuario(this.indexActivo).getReputacionRelativa())
-                    {//Caso que tenga suficiente reputacion
-                        Recompensa nuevaRecompensa = new Recompensa(recompensa, this.indexActivo);
-                        this.getListaUsuarios().getUsuario(this.indexActivo).restarReputacionRelativa(recompensa); //Se resta a la relativa
-                        this.listaPreguntas.getPregunta(ID).getListaRecompensa().agregarRecompensa(nuevaRecompensa);
-                        System.out.println("RECOMPENSA REALIZADA CON EXITO");
-                    }
-                    else
-                    {
-                        System.out.println("NO POSEE LA SUFICIENTE REPUTACION");
-                    }
-                }
-                else
-                {
-                    System.out.println("EL ID INGRESADO NO VALIDO");
-                }
+                //Caso que tenga suficiente reputacion
+                Recompensa nuevaRecompensa = new Recompensa(recompensa, this.indexActivo);
+                this.listaUsuarios.getUsuario(this.indexActivo).restarReputacionRelativa(recompensa); //Se resta a la relativa
+                this.listaPreguntas.getPregunta(ID).getListaRecompensa().agregarRecompensa(nuevaRecompensa);
+                return true;
+
             }
             else
             {
-                System.out.println("EL ID INGRESADO NO VALIDO");
+                return false;
             }
         }
+
+        
         /*Perimte aceptar una respuesta de una determinada pregunta
         @param IDPregunta, ID de la pregunta
         @param IDRespuesta, ID de la respuesta a aceptar 

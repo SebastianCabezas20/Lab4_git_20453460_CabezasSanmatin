@@ -46,6 +46,9 @@ namespace FormaPrincipal
 
                 }
             }
+
+            int total = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getListaRecompensa().sumarRecompensas();
+            labelCantidadRecompensa.Text = total.ToString();
         }
 
         private void buttonAgregarRespuesta_Click(object sender, EventArgs e)
@@ -63,6 +66,30 @@ namespace FormaPrincipal
                 dataGridViewRespuestas.Rows[indexData].Cells[4].Value = "NO ACEPTADA";
                 textBoxContenidoRespuesta.Text = "";
             }
+        }
+
+        private void buttonAgregarRecompensa_Click(object sender, EventArgs e)
+        {
+            int recompensa = Convert.ToInt32(textBoxRecompensa.Text);
+            if (recompensa > 0)
+            {
+                if (sistema.reward(sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getID(), recompensa))
+                {
+                    MessageBox.Show("Recompensa agregada correctamente");
+                    //Agregamos la recompensa visualmente
+                    int total = Convert.ToInt32(labelCantidadRecompensa.Text);
+                    labelCantidadRecompensa.Text = (total + recompensa).ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No tiene suficiente reputacion");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un numero mayor que 0");
+            }
+            textBoxRecompensa.Text = "";
         }
     }
 }

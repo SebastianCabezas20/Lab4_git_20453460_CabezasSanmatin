@@ -37,6 +37,10 @@ namespace FormaPrincipal
             this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAgregarRespuesta = new System.Windows.Forms.Button();
             this.textBoxContenidoRespuesta = new System.Windows.Forms.TextBox();
+            this.buttonAgregarRecompensa = new System.Windows.Forms.Button();
+            this.textBoxRecompensa = new System.Windows.Forms.TextBox();
+            this.labelTituloRecompensa = new System.Windows.Forms.Label();
+            this.labelCantidadRecompensa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,11 +106,51 @@ namespace FormaPrincipal
             this.textBoxContenidoRespuesta.Size = new System.Drawing.Size(251, 20);
             this.textBoxContenidoRespuesta.TabIndex = 2;
             // 
+            // buttonAgregarRecompensa
+            // 
+            this.buttonAgregarRecompensa.Location = new System.Drawing.Point(431, 293);
+            this.buttonAgregarRecompensa.Name = "buttonAgregarRecompensa";
+            this.buttonAgregarRecompensa.Size = new System.Drawing.Size(153, 23);
+            this.buttonAgregarRecompensa.TabIndex = 3;
+            this.buttonAgregarRecompensa.Text = "Agregar recompensa";
+            this.buttonAgregarRecompensa.UseVisualStyleBackColor = true;
+            this.buttonAgregarRecompensa.Click += new System.EventHandler(this.buttonAgregarRecompensa_Click);
+            // 
+            // textBoxRecompensa
+            // 
+            this.textBoxRecompensa.Location = new System.Drawing.Point(431, 322);
+            this.textBoxRecompensa.Name = "textBoxRecompensa";
+            this.textBoxRecompensa.Size = new System.Drawing.Size(153, 20);
+            this.textBoxRecompensa.TabIndex = 4;
+            this.textBoxRecompensa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelTituloRecompensa
+            // 
+            this.labelTituloRecompensa.AutoSize = true;
+            this.labelTituloRecompensa.Location = new System.Drawing.Point(637, 303);
+            this.labelTituloRecompensa.Name = "labelTituloRecompensa";
+            this.labelTituloRecompensa.Size = new System.Drawing.Size(85, 13);
+            this.labelTituloRecompensa.TabIndex = 5;
+            this.labelTituloRecompensa.Text = "RECOMPENSA:";
+            // 
+            // labelCantidadRecompensa
+            // 
+            this.labelCantidadRecompensa.AutoSize = true;
+            this.labelCantidadRecompensa.Location = new System.Drawing.Point(728, 303);
+            this.labelCantidadRecompensa.Name = "labelCantidadRecompensa";
+            this.labelCantidadRecompensa.Size = new System.Drawing.Size(35, 13);
+            this.labelCantidadRecompensa.TabIndex = 6;
+            this.labelCantidadRecompensa.Text = "label2";
+            // 
             // Respuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 375);
+            this.Controls.Add(this.labelCantidadRecompensa);
+            this.Controls.Add(this.labelTituloRecompensa);
+            this.Controls.Add(this.textBoxRecompensa);
+            this.Controls.Add(this.buttonAgregarRecompensa);
             this.Controls.Add(this.textBoxContenidoRespuesta);
             this.Controls.Add(this.buttonAgregarRespuesta);
             this.Controls.Add(this.dataGridViewRespuestas);
@@ -129,5 +173,9 @@ namespace FormaPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
         private System.Windows.Forms.Button buttonAgregarRespuesta;
         private System.Windows.Forms.TextBox textBoxContenidoRespuesta;
+        private System.Windows.Forms.Button buttonAgregarRecompensa;
+        private System.Windows.Forms.TextBox textBoxRecompensa;
+        private System.Windows.Forms.Label labelTituloRecompensa;
+        private System.Windows.Forms.Label labelCantidadRecompensa;
     }
 }
