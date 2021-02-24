@@ -42,6 +42,7 @@ namespace FormaPrincipal
             this.ColumnAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonAgregarPregunta = new System.Windows.Forms.Button();
+            this.buttonAceptarRespuestas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,11 +162,22 @@ namespace FormaPrincipal
             this.buttonAgregarPregunta.UseVisualStyleBackColor = true;
             this.buttonAgregarPregunta.Click += new System.EventHandler(this.buttonAgregarPregunta_Click);
             // 
+            // buttonAceptarRespuestas
+            // 
+            this.buttonAceptarRespuestas.Location = new System.Drawing.Point(279, 340);
+            this.buttonAceptarRespuestas.Name = "buttonAceptarRespuestas";
+            this.buttonAceptarRespuestas.Size = new System.Drawing.Size(135, 23);
+            this.buttonAceptarRespuestas.TabIndex = 10;
+            this.buttonAceptarRespuestas.Text = "Aceptar respuestas";
+            this.buttonAceptarRespuestas.UseVisualStyleBackColor = true;
+            this.buttonAceptarRespuestas.Click += new System.EventHandler(this.buttonAceptarRespuestas_Click);
+            // 
             // FormaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAceptarRespuestas);
             this.Controls.Add(this.buttonAgregarPregunta);
             this.Controls.Add(this.buttonSalir);
             this.Controls.Add(this.dataGridViewPreguntas);
@@ -197,6 +209,7 @@ namespace FormaPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAutor;
+        private System.Windows.Forms.Button buttonAceptarRespuestas;
     }
 }
 

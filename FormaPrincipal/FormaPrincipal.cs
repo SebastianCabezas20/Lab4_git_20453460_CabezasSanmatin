@@ -113,5 +113,13 @@ namespace FormaPrincipal
             //ADV.Re.Lal
             
         }
+
+        private void buttonAceptarRespuestas_Click(object sender, EventArgs e)
+        {
+            Aceptar formaAceptar = new Aceptar(over);
+            formaAceptar.ShowDialog();
+            //ADV. Lab.Re
+
+        }
     }
 }
