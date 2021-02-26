@@ -92,6 +92,7 @@ namespace Codigo
                 return false;
             }
         }
+
         public bool logout(String username, String pass)
         {
             //Se verifica que los datos sean del usuario activo
@@ -149,73 +150,37 @@ namespace Codigo
             }
         }
 
-        
-        /*Perimte aceptar una respuesta de una determinada pregunta
-        @param IDPregunta, ID de la pregunta
-        @param IDRespuesta, ID de la respuesta a aceptar 
-        
         public void accept(int IDPregunta, int IDRespuesta)
         {
-            //Verificar que la pregunta exista 
-            //Verificar que la pregunta sea del usuario
-            if (this.listaPreguntas.verificarIDPregunta(IDPregunta))
+            //existe recompensa
+            if (this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().cantidadRecompensas() > 0 && !this.listaPreguntas.getPregunta(IDPregunta).getEstado())
             {
-                if (this.listaPreguntas.verificarUsername(IDPregunta, this.listaUsuarios.getUsuario(this.indexActivo).getUsername()))
+                int recompensaTotal = 0; //Suma de total
+                //Cobrar recompensas en el arrayList de recompensas
+                for (int i = 0; i < this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().cantidadRecompensas(); i++)
                 {
-                    ///Verificar que existe ID respuesta en la pregunta
-                    // Verificar que estado
-                    //verificar que pertenezca a la pregunta
-                    if (this.listaRespuestas.verificarID(IDRespuesta))
-                    {
-                        if (!this.listaRespuestas.getRespuesta(IDRespuesta).getEstado() && this.listaRespuestas.getRespuesta(IDRespuesta).getPreguntaRespondida() == IDPregunta)
-                        {
-                            //existe recompensa
-                            if (this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().cantidadRecompensas() > 0 && !this.listaPreguntas.getPregunta(IDPregunta).getEstado())
-                            {
-                                int recompensaTotal = 0; //Suma de total
-                                                         //Cobrar recompensas en el arrayList de recompensas
-                                for (int i = 0; i < this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().cantidadRecompensas(); i++)
-                                {
-                                    int recompensaCobrada = this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().getRecompensa(i).getReputacion();
-                                    //Se busca a usuario que ofrecio recompensa
-                                    int indexOfrecido = this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().getRecompensa(i).getUsuarioRecompensa();
-                                    recompensaTotal = recompensaTotal + recompensaCobrada; //Se suma recompensa 
-                                    this.listaUsuarios.getUsuario(indexOfrecido).restarReputacionAbsoluta(recompensaCobrada);//Restar a usuario
-                                }//Se cambian los estados
-                                this.listaPreguntas.getPregunta(IDPregunta).setEstado(true);
-                                this.listaRespuestas.getRespuesta(IDRespuesta).setEstado(true);
-                                //Suma reputacion a usuario que respondio
-                                this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(IDRespuesta).getAutor()).sumarReputacionAbsoluta(recompensaTotal);
-                                this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(IDRespuesta).getAutor()).sumarReputacionRelativa(recompensaTotal);
-                                System.out.println("RESPUESTA ACEPTADA CON EXITO");
-                            }
-                            else
-                            {//Caso que no haya recompensa
-                                this.listaPreguntas.getPregunta(IDPregunta).setEstado(true);
-                                this.listaRespuestas.getRespuesta(IDRespuesta).setEstado(true);
-                                System.out.println("RESPUESTA ACEPTADA CON EXITO");
-                            }
-                        }
-                        else
-                        {
-                            System.out.println("ID DE RESPUESTA NO VALIDO");
-                        }
-                    }
-                    else
-                    {
-                        System.out.println("ID DE RESPUESTA NO VALIDO");
-                    }
+                    int recompensaCobrada = this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().getRecompensa(i).getReputacion();
+                    //Se busca a usuario que ofrecio recompensa
+                    int indexOfrecido = this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().getRecompensa(i).getUsuarioRecompensa();
+                    recompensaTotal = recompensaTotal + recompensaCobrada; //Se suma recompensa 
+                    this.listaUsuarios.getUsuario(indexOfrecido).restarReputacionAbsoluta(recompensaCobrada);//Restar a usuario
                 }
-                else
-                {
-                    System.out.println("ID DE PREGUNTA NO VALIDO");
-                }
+                //Se cambian los estados
+                this.listaPreguntas.getPregunta(IDPregunta).setEstado(true);
+                this.listaRespuestas.getRespuesta(IDRespuesta).setEstado(true);
+                //Suma reputacion a usuario que respondio
+                this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(IDRespuesta).getAutor()).sumarReputacionAbsoluta(recompensaTotal);
+                this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(IDRespuesta).getAutor()).sumarReputacionRelativa(recompensaTotal);
+
             }
             else
-            {
-                System.out.println("ID DE PREGUNTA NO VALIDO");
+            {//Caso que no haya recompensa
+                this.listaPreguntas.getPregunta(IDPregunta).setEstado(true);
+                this.listaRespuestas.getRespuesta(IDRespuesta).setEstado(true);
             }
+
         }
+        
         /*Perimte votar negativa o positivamente una pregunta o respuesta
         @param ID, ID de pregunta o respuesta
         @param opcion, booleano que indicara voto 

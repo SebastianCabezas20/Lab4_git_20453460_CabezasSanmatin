@@ -26,7 +26,7 @@ namespace FormaPrincipal
             if (index >= 0)
             {
                 int ID = Convert.ToInt32(dataGridViewPreguntasAccept.Rows[index].Cells[2].Value);
-                RespuestasAceptadas formAceptar = new RespuestasAceptadas(ID, sistema);
+                RespuestasAccept formAceptar = new RespuestasAccept(ID, sistema);
                 formAceptar.ShowDialog();
             }
         }

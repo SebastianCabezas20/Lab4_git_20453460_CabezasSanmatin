@@ -29,47 +29,55 @@ namespace FormaPrincipal
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewRespuestas = new System.Windows.Forms.DataGridView();
             this.ColumnContenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnButtonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.buttonVolver = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewRespuestas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewRespuestas.AllowUserToAddRows = false;
+            this.dataGridViewRespuestas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRespuestas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnContenido,
             this.ColumnAutor,
             this.ColumnID,
             this.ColumnButtonAceptar});
-            this.dataGridView1.Location = new System.Drawing.Point(42, 28);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(446, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewRespuestas.Location = new System.Drawing.Point(42, 28);
+            this.dataGridViewRespuestas.MultiSelect = false;
+            this.dataGridViewRespuestas.Name = "dataGridViewRespuestas";
+            this.dataGridViewRespuestas.ReadOnly = true;
+            this.dataGridViewRespuestas.Size = new System.Drawing.Size(446, 150);
+            this.dataGridViewRespuestas.TabIndex = 0;
+            this.dataGridViewRespuestas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRespuestas_CellContentClick);
             // 
             // ColumnContenido
             // 
             this.ColumnContenido.HeaderText = "Contenido";
             this.ColumnContenido.Name = "ColumnContenido";
+            this.ColumnContenido.ReadOnly = true;
             // 
             // ColumnAutor
             // 
             this.ColumnAutor.HeaderText = "Autor";
             this.ColumnAutor.Name = "ColumnAutor";
+            this.ColumnAutor.ReadOnly = true;
             // 
             // ColumnID
             // 
             this.ColumnID.HeaderText = "ID";
             this.ColumnID.Name = "ColumnID";
+            this.ColumnID.ReadOnly = true;
             // 
             // ColumnButtonAceptar
             // 
             this.ColumnButtonAceptar.HeaderText = "Aceptar";
             this.ColumnButtonAceptar.Name = "ColumnButtonAceptar";
+            this.ColumnButtonAceptar.ReadOnly = true;
             // 
             // buttonVolver
             // 
@@ -79,24 +87,26 @@ namespace FormaPrincipal
             this.buttonVolver.TabIndex = 1;
             this.buttonVolver.Text = "Volver";
             this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // RespuestasAccept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(713, 251);
             this.Controls.Add(this.buttonVolver);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewRespuestas);
             this.Name = "RespuestasAccept";
             this.Text = "RespuestasAccept";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.RespuestasAccept_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewRespuestas;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContenido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
