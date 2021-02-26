@@ -27,8 +27,19 @@ namespace FormaPrincipal
             {
                 if(sistema.login(formDatos.getUser(), formDatos.getUser()))
                 {
-                    MessageBox.Show("Autenticado con exito");
-                    labelNombreUser.Text = this.sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getUsername();
+                    MessageBox.Show("Autenticado");
+                    buttonLogin.Hide();
+                    buttonRegister.Hide();
+                    buttonLogout.Show();
+                    buttonAgregarPregunta.Show();
+                    buttonAceptarRespuestas.Show();
+                    labelReputacion.Show();
+                    labelReputacionRelativa.Show();
+                    labelCantidadReputacionRelativa.Show();
+                    labelCantidadReputacion.Show();
+                    labelCantidadReputacionRelativa.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacionRelativa().ToString();
+                    labelCantidadReputacion.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacion().ToString();
+                    labelNombreUser.Text = "Bienvenido " + sistema.GetListaUsuarios.getUsuario(sistema.getIndexActivo).getUsername();
                 }
                 else
                 {
@@ -46,6 +57,7 @@ namespace FormaPrincipal
                 if (sistema.Register(formRegister.getUser(), formRegister.getPass()))
                 {
                     MessageBox.Show("Se agrego correctamente");
+
                     
                 }
                 else
@@ -55,6 +67,7 @@ namespace FormaPrincipal
             }
         }
 
+        //Logout
         private void button3_Click(object sender, EventArgs e)
         {
             Datos formLogout = new Datos();
@@ -63,7 +76,18 @@ namespace FormaPrincipal
                 if (sistema.logout(formLogout.getUser(), formLogout.getPass()))
                 {
                     MessageBox.Show("Sesion cerrada con exito");
-                    labelNombreUser.Hide();
+                    buttonLogin.Show();
+                    buttonRegister.Show();
+                    buttonLogout.Hide();
+                    buttonAgregarPregunta.Hide();
+                    buttonAceptarRespuestas.Hide();
+                    labelReputacion.Hide();
+                    labelCantidadReputacion.Hide();
+                    labelReputacionRelativa.Hide();
+                    labelCantidadReputacionRelativa.Hide();
+                    labelNombreUser.Text = "";
+
+
                 }
                 else
                 {
@@ -105,21 +129,45 @@ namespace FormaPrincipal
         private void dataGridViewPreguntas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            //AD.T,Ind
+            if (index >= 0 && sistema.getIndexActivo != -1)
+            {
+
+                int ID = Convert.ToInt32(dataGridViewPreguntas.Rows[index].Cells[2].Value);//Conseguir el ID de la pregunta
+                Respuestas formRespuestas = new Respuestas(sistema, ID);//Forma de la pregunta
+                formRespuestas.ShowDialog();//Mostrar
+                labelCantidadReputacion.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacion().ToString();
+                labelCantidadReputacionRelativa.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacionRelativa().ToString();
+            }
             
-            int ID = Convert.ToInt32(dataGridViewPreguntas.Rows[index].Cells[2].Value);//Conseguir el ID de la pregunta
-            Respuestas formRespuestas = new Respuestas(sistema, ID);//Forma de la pregunta
-            formRespuestas.ShowDialog();//Mostrar
-            //ADV.Re.Lal
-            
+
         }
 
         private void buttonAceptarRespuestas_Click(object sender, EventArgs e)
         {
-            Aceptar formaAceptar = new Aceptar(over);
+            Aceptar formaAceptar = new Aceptar(sistema);
             formaAceptar.ShowDialog();
-            //ADV. Lab.Re
+            labelCantidadReputacion.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacion().ToString();
+            labelCantidadReputacionRelativa.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacionRelativa().ToString();
 
+        }
+
+        private void FormaPrincipal_Load(object sender, EventArgs e)
+        {
+            //Ocultar botones
+            labelNombreUser.Text = "";
+            buttonLogout.Hide();
+            buttonAgregarPregunta.Hide();
+            buttonAceptarRespuestas.Hide();
+            labelReputacion.Hide();
+            labelCantidadReputacion.Hide();
+            labelCantidadReputacionRelativa.Hide();
+            labelReputacionRelativa.Hide();
+
+            //Agregar etiquetas
+            sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Java", "Descripcion de la etiqueta 1"));
+            sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("C#", "Descripcion de la etiqueta 2"));
+            sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Python", "Descripcion de la etiqueta 3"));
+            sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Prolog", "Descripcion de la etiqueta 4"));
         }
     }
 }

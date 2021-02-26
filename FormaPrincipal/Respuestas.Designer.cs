@@ -41,11 +41,15 @@ namespace FormaPrincipal
             this.textBoxRecompensa = new System.Windows.Forms.TextBox();
             this.labelTituloRecompensa = new System.Windows.Forms.Label();
             this.labelCantidadRecompensa = new System.Windows.Forms.Label();
+            this.labelTituloPregunta = new System.Windows.Forms.Label();
+            this.labelAutor = new System.Windows.Forms.Label();
+            this.labelFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewRespuestas
             // 
+            this.dataGridViewRespuestas.AllowUserToAddRows = false;
             this.dataGridViewRespuestas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewRespuestas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnContenido,
@@ -142,11 +146,41 @@ namespace FormaPrincipal
             this.labelCantidadRecompensa.TabIndex = 6;
             this.labelCantidadRecompensa.Text = "label2";
             // 
+            // labelTituloPregunta
+            // 
+            this.labelTituloPregunta.AutoSize = true;
+            this.labelTituloPregunta.Location = new System.Drawing.Point(51, 13);
+            this.labelTituloPregunta.Name = "labelTituloPregunta";
+            this.labelTituloPregunta.Size = new System.Drawing.Size(35, 13);
+            this.labelTituloPregunta.TabIndex = 7;
+            this.labelTituloPregunta.Text = "label1";
+            // 
+            // labelAutor
+            // 
+            this.labelAutor.AutoSize = true;
+            this.labelAutor.Location = new System.Drawing.Point(51, 48);
+            this.labelAutor.Name = "labelAutor";
+            this.labelAutor.Size = new System.Drawing.Size(35, 13);
+            this.labelAutor.TabIndex = 8;
+            this.labelAutor.Text = "label2";
+            // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Location = new System.Drawing.Point(51, 80);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(35, 13);
+            this.labelFecha.TabIndex = 9;
+            this.labelFecha.Text = "label3";
+            // 
             // Respuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 375);
+            this.Controls.Add(this.labelFecha);
+            this.Controls.Add(this.labelAutor);
+            this.Controls.Add(this.labelTituloPregunta);
             this.Controls.Add(this.labelCantidadRecompensa);
             this.Controls.Add(this.labelTituloRecompensa);
             this.Controls.Add(this.textBoxRecompensa);
@@ -177,5 +211,8 @@ namespace FormaPrincipal
         private System.Windows.Forms.TextBox textBoxRecompensa;
         private System.Windows.Forms.Label labelTituloRecompensa;
         private System.Windows.Forms.Label labelCantidadRecompensa;
+        private System.Windows.Forms.Label labelTituloPregunta;
+        private System.Windows.Forms.Label labelAutor;
+        private System.Windows.Forms.Label labelFecha;
     }
 }

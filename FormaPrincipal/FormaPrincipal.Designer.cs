@@ -43,6 +43,10 @@ namespace FormaPrincipal
             this.buttonSalir = new System.Windows.Forms.Button();
             this.buttonAgregarPregunta = new System.Windows.Forms.Button();
             this.buttonAceptarRespuestas = new System.Windows.Forms.Button();
+            this.labelReputacion = new System.Windows.Forms.Label();
+            this.labelReputacionRelativa = new System.Windows.Forms.Label();
+            this.labelCantidadReputacion = new System.Windows.Forms.Label();
+            this.labelCantidadReputacionRelativa = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,7 +168,7 @@ namespace FormaPrincipal
             // 
             // buttonAceptarRespuestas
             // 
-            this.buttonAceptarRespuestas.Location = new System.Drawing.Point(279, 340);
+            this.buttonAceptarRespuestas.Location = new System.Drawing.Point(321, 340);
             this.buttonAceptarRespuestas.Name = "buttonAceptarRespuestas";
             this.buttonAceptarRespuestas.Size = new System.Drawing.Size(135, 23);
             this.buttonAceptarRespuestas.TabIndex = 10;
@@ -172,11 +176,51 @@ namespace FormaPrincipal
             this.buttonAceptarRespuestas.UseVisualStyleBackColor = true;
             this.buttonAceptarRespuestas.Click += new System.EventHandler(this.buttonAceptarRespuestas_Click);
             // 
+            // labelReputacion
+            // 
+            this.labelReputacion.AutoSize = true;
+            this.labelReputacion.Location = new System.Drawing.Point(557, 68);
+            this.labelReputacion.Name = "labelReputacion";
+            this.labelReputacion.Size = new System.Drawing.Size(80, 13);
+            this.labelReputacion.TabIndex = 11;
+            this.labelReputacion.Text = "REPUTACION:";
+            // 
+            // labelReputacionRelativa
+            // 
+            this.labelReputacionRelativa.AutoSize = true;
+            this.labelReputacionRelativa.Location = new System.Drawing.Point(502, 91);
+            this.labelReputacionRelativa.Name = "labelReputacionRelativa";
+            this.labelReputacionRelativa.Size = new System.Drawing.Size(135, 13);
+            this.labelReputacionRelativa.TabIndex = 12;
+            this.labelReputacionRelativa.Text = "REPUTACION RELATIVA:";
+            // 
+            // labelCantidadReputacion
+            // 
+            this.labelCantidadReputacion.AutoSize = true;
+            this.labelCantidadReputacion.Location = new System.Drawing.Point(644, 68);
+            this.labelCantidadReputacion.Name = "labelCantidadReputacion";
+            this.labelCantidadReputacion.Size = new System.Drawing.Size(35, 13);
+            this.labelCantidadReputacion.TabIndex = 13;
+            this.labelCantidadReputacion.Text = "label3";
+            // 
+            // labelCantidadReputacionRelativa
+            // 
+            this.labelCantidadReputacionRelativa.AutoSize = true;
+            this.labelCantidadReputacionRelativa.Location = new System.Drawing.Point(644, 91);
+            this.labelCantidadReputacionRelativa.Name = "labelCantidadReputacionRelativa";
+            this.labelCantidadReputacionRelativa.Size = new System.Drawing.Size(35, 13);
+            this.labelCantidadReputacionRelativa.TabIndex = 14;
+            this.labelCantidadReputacionRelativa.Text = "label4";
+            // 
             // FormaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelCantidadReputacionRelativa);
+            this.Controls.Add(this.labelCantidadReputacion);
+            this.Controls.Add(this.labelReputacionRelativa);
+            this.Controls.Add(this.labelReputacion);
             this.Controls.Add(this.buttonAceptarRespuestas);
             this.Controls.Add(this.buttonAgregarPregunta);
             this.Controls.Add(this.buttonSalir);
@@ -188,6 +232,7 @@ namespace FormaPrincipal
             this.Controls.Add(this.labelTitulo);
             this.Name = "FormaPrincipal";
             this.Text = "Forma Principal";
+            this.Load += new System.EventHandler(this.FormaPrincipal_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -210,6 +255,10 @@ namespace FormaPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAutor;
         private System.Windows.Forms.Button buttonAceptarRespuestas;
+        private System.Windows.Forms.Label labelReputacion;
+        private System.Windows.Forms.Label labelReputacionRelativa;
+        private System.Windows.Forms.Label labelCantidadReputacion;
+        private System.Windows.Forms.Label labelCantidadReputacionRelativa;
     }
 }
 

@@ -25,6 +25,11 @@ namespace FormaPrincipal
 
         private void Respuestas_Load(object sender, EventArgs e)
         {
+            //Cargar etiquetas
+            labelTituloPregunta.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getContenido();
+            labelAutor.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getAutor();
+            labelFecha.Text = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).GetDate.ToString();
+
             //Datagridview, Cargar respuestas
             for (int i = 0; i < this.sistema.GetListaRespuestas.cantidadRespuestas(); i++)
             {
@@ -47,8 +52,20 @@ namespace FormaPrincipal
                 }
             }
 
-            int total = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getListaRecompensa().sumarRecompensas();
-            labelCantidadRecompensa.Text = total.ToString();
+            if (this.sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getEstado())
+            {
+                //Ocultar recompensa si ya hay una respuesta aceptada
+                buttonAgregarRecompensa.Hide();
+                textBoxRecompensa.Hide();
+                labelCantidadRecompensa.Hide();
+                labelTituloRecompensa.Hide();
+            }
+            else
+            {
+                //Mostrar la opcion de agregar recompensa
+                int total = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getListaRecompensa().sumarRecompensas();
+                labelCantidadRecompensa.Text = total.ToString();
+            }
         }
 
         private void buttonAgregarRespuesta_Click(object sender, EventArgs e)

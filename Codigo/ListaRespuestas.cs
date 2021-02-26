@@ -73,7 +73,7 @@ namespace Codigo
 
         public bool verificarRespuestaNoAceptada(int IDPregunta, int index)
         {
-            // Si tiene el ID de la pregunta buscada y el estado es aceptada------------
+            // Si tiene el ID de la pregunta buscada y el estado es aceptada
             if (this.listaRespuesta[index].getPreguntaRespondida() == IDPregunta && !this.listaRespuesta[index].getEstado())
             {
                 return true;

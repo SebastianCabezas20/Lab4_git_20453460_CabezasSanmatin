@@ -39,6 +39,7 @@ namespace FormaPrincipal
             // 
             // dataGridViewPreguntasAccept
             // 
+            this.dataGridViewPreguntasAccept.AllowUserToAddRows = false;
             this.dataGridViewPreguntasAccept.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPreguntasAccept.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnTitulo,
@@ -46,7 +47,7 @@ namespace FormaPrincipal
             this.ColumnID});
             this.dataGridViewPreguntasAccept.Location = new System.Drawing.Point(102, 87);
             this.dataGridViewPreguntasAccept.Name = "dataGridViewPreguntasAccept";
-            this.dataGridViewPreguntasAccept.Size = new System.Drawing.Size(344, 167);
+            this.dataGridViewPreguntasAccept.Size = new System.Drawing.Size(341, 167);
             this.dataGridViewPreguntasAccept.TabIndex = 0;
             this.dataGridViewPreguntasAccept.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPreguntasAccept_CellDoubleClick);
             // 
