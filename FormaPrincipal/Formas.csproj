@@ -84,6 +84,12 @@
     <Compile Include="RespuestasAccept.Designer.cs">
       <DependentUpon>RespuestasAccept.cs</DependentUpon>
     </Compile>
+    <Compile Include="Votar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Votar.Designer.cs">
+      <DependentUpon>Votar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Aceptar.resx">
       <DependentUpon>Aceptar.cs</DependentUpon>
     </EmbeddedResource>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RespuestasAccept.resx">
       <DependentUpon>RespuestasAccept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Votar.resx">
+      <DependentUpon>Votar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

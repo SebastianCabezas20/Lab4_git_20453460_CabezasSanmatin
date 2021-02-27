@@ -44,6 +44,10 @@ namespace FormaPrincipal
             this.labelTituloPregunta = new System.Windows.Forms.Label();
             this.labelAutor = new System.Windows.Forms.Label();
             this.labelFecha = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelCantidadLikes = new System.Windows.Forms.Label();
+            this.labelCantidadDislike = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,8 +62,10 @@ namespace FormaPrincipal
             this.ColumnFecha,
             this.ColumnEstado});
             this.dataGridViewRespuestas.Location = new System.Drawing.Point(155, 118);
+            this.dataGridViewRespuestas.MultiSelect = false;
             this.dataGridViewRespuestas.Name = "dataGridViewRespuestas";
             this.dataGridViewRespuestas.ReadOnly = true;
+            this.dataGridViewRespuestas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRespuestas.Size = new System.Drawing.Size(543, 150);
             this.dataGridViewRespuestas.TabIndex = 0;
             // 
@@ -173,11 +179,51 @@ namespace FormaPrincipal
             this.labelFecha.TabIndex = 9;
             this.labelFecha.Text = "label3";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "LIKE:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 162);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "DISLIKE:";
+            // 
+            // labelCantidadLikes
+            // 
+            this.labelCantidadLikes.AutoSize = true;
+            this.labelCantidadLikes.Location = new System.Drawing.Point(64, 134);
+            this.labelCantidadLikes.Name = "labelCantidadLikes";
+            this.labelCantidadLikes.Size = new System.Drawing.Size(35, 13);
+            this.labelCantidadLikes.TabIndex = 12;
+            this.labelCantidadLikes.Text = "label3";
+            // 
+            // labelCantidadDislike
+            // 
+            this.labelCantidadDislike.AutoSize = true;
+            this.labelCantidadDislike.Location = new System.Drawing.Point(67, 162);
+            this.labelCantidadDislike.Name = "labelCantidadDislike";
+            this.labelCantidadDislike.Size = new System.Drawing.Size(35, 13);
+            this.labelCantidadDislike.TabIndex = 13;
+            this.labelCantidadDislike.Text = "label4";
+            // 
             // Respuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 375);
+            this.Controls.Add(this.labelCantidadDislike);
+            this.Controls.Add(this.labelCantidadLikes);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelFecha);
             this.Controls.Add(this.labelAutor);
             this.Controls.Add(this.labelTituloPregunta);
@@ -214,5 +260,9 @@ namespace FormaPrincipal
         private System.Windows.Forms.Label labelTituloPregunta;
         private System.Windows.Forms.Label labelAutor;
         private System.Windows.Forms.Label labelFecha;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelCantidadLikes;
+        private System.Windows.Forms.Label labelCantidadDislike;
     }
 }

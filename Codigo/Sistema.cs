@@ -7,7 +7,7 @@ namespace Codigo
     public class Sistema
     {
         private int IDgeneral;//ID unico e incremental
-        private ListaUsuarios listaUsuarios;//lista de usuarios del stack
+        private ListaUsuarios listaUsuarios;//lista de usuarios del sta
         private ListaPreguntas listaPreguntas;//lista de preguntas del stack
         private ListaEtiquetas listaEtiquetas;//lista etiquetas del stack
         private ListaRespuestas listaRespuestas;//lista respuestas del stack
@@ -164,6 +164,7 @@ namespace Codigo
                     int indexOfrecido = this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().getRecompensa(i).getUsuarioRecompensa();
                     recompensaTotal = recompensaTotal + recompensaCobrada; //Se suma recompensa 
                     this.listaUsuarios.getUsuario(indexOfrecido).restarReputacionAbsoluta(recompensaCobrada);//Restar a usuario
+                    this.listaUsuarios.getUsuario(indexOfrecido).restarReputacionRelativa(recompensaCobrada);//Restar a usuario
                 }
                 //Se cambian los estados
                 this.listaPreguntas.getPregunta(IDPregunta).setEstado(true);
@@ -178,75 +179,59 @@ namespace Codigo
                 this.listaPreguntas.getPregunta(IDPregunta).setEstado(true);
                 this.listaRespuestas.getRespuesta(IDRespuesta).setEstado(true);
             }
-
+            //Reputacion por aceptar
+            this.listaUsuarios.getUsuarioUsername(this.GetListaRespuestas.getRespuesta(IDRespuesta).getAutor()).sumarReputacionAbsoluta(15);
+            this.listaUsuarios.getUsuarioUsername(this.GetListaRespuestas.getRespuesta(IDRespuesta).getAutor()).sumarReputacionRelativa(15);
+            this.listaUsuarios.getUsuario(this.indexActivo).sumarReputacionRelativa(2);
+            this.listaUsuarios.getUsuario(this.indexActivo).sumarReputacionAbsoluta(2);
         }
-        
-        /*Perimte votar negativa o positivamente una pregunta o respuesta
-        @param ID, ID de pregunta o respuesta
-        @param opcion, booleano que indicara voto 
-        
-        public void vote(int ID, boolean opcion)
+
+        public void vote(int ID, bool opcion)
         {
             //Se verifica que existe ID pregunta
             if (this.listaPreguntas.verificarIDPregunta(ID))
             {
-                //Siempre que no sea del usuario
-                if (!this.listaPreguntas.getPregunta(ID).getAutor().equals(this.listaUsuarios.getUsuario(this.indexActivo).getUsername()))
+                if (this.listaPreguntas.getPregunta(ID).aumentarVoto(opcion))
                 {
-                    if (this.getListaPreguntas().getPregunta(ID).aumentarVoto(opcion))
-                    {
-                        //Se suma reputacion segun enunciado
-                        this.listaUsuarios.getUsuarioUsername(this.listaPreguntas.getPregunta(ID).getAutor()).sumarReputacionAbsoluta(10);
-                        System.out.println("VOTO POSITIVO REALIZADO CON EXITO");
-                    }
-                    else
-                    {
-                        //Se resta reputacion segun enunciado
-                        this.listaUsuarios.getUsuarioUsername(this.listaPreguntas.getPregunta(ID).getAutor()).sumarReputacionAbsoluta(2);
-                        System.out.println("VOTO NEGATIVO REALIZADO CON EXITO");
-                    }
+                    //Se suma reputacion segun enunciado
+                    this.listaUsuarios.getUsuarioUsername(this.listaPreguntas.getPregunta(ID).getAutor()).sumarReputacionAbsoluta(10);
+                    this.listaUsuarios.getUsuarioUsername(this.listaPreguntas.getPregunta(ID).getAutor()).sumarReputacionRelativa(10);
+                    //Voto realizado positivo
                 }
                 else
                 {
-                    System.out.println("ID INGRESADO NO VALIDO");
+                    //Se resta reputacion segun enunciado
+                    this.listaUsuarios.getUsuarioUsername(this.listaPreguntas.getPregunta(ID).getAutor()).restarReputacionAbsoluta(2);
+                    this.listaUsuarios.getUsuarioUsername(this.listaPreguntas.getPregunta(ID).getAutor()).restarReputacionRelativa(2);
+                    //Voto realizado negativo
                 }
+
+
             }
             //O se verifica que existe ID respuesta
             else if (this.listaRespuestas.verificarID(ID))
             {//votar una respuesta
-             //Siempre que no sea del usuario y el estado este aceptado
-                if (!this.listaRespuestas.getRespuesta(ID).getAutor().equals(this.listaUsuarios.getUsuario(this.indexActivo).getUsername()) &&
-                        this.listaRespuestas.getRespuesta(ID).getEstado())
-                {
-                    if (this.listaRespuestas.getRespuesta(ID).aumentarVoto(opcion))
-                    {//votar positivamente
-                     //Se suma reputacion segun enunciado
-                        this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).sumarReputacionAbsoluta(10);
-                        this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).sumarReputacionRelativa(10);
-                        System.out.println("VOTO POSITIVO REALIZADO CON EXITO");
-                    }
-                    else
-                    {//votar negativamente
-                     //Se suma reputacion segun enunciado
-                        this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).restarReputacionAbsoluta(2);
-                        this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).restarReputacionRelativa(2);
-                        this.listaUsuarios.getUsuario(this.indexActivo).restarReputacionAbsoluta(2);
-                        this.listaUsuarios.getUsuario(this.indexActivo).restarReputacionRelativa(2);
-                        System.out.println("VOTO NEGATIVO REALIZADO CON EXITO");
-                    }
+
+                if (this.listaRespuestas.getRespuesta(ID).aumentarVoto(opcion))
+                {//votar positivamente
+                    //Se suma reputacion segun enunciado
+                    this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).sumarReputacionAbsoluta(10);
+                    this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).sumarReputacionRelativa(10);
+                    //Voto positivo realizado
                 }
                 else
-                {
-                    System.out.println("ID INGRESADO NO VALIDO");
+                {//votar negativamente
+                 //Se suma reputacion segun enunciado
+                    this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).restarReputacionAbsoluta(2);
+                    this.listaUsuarios.getUsuarioUsername(this.listaRespuestas.getRespuesta(ID).getAutor()).restarReputacionRelativa(2);
+                    this.listaUsuarios.getUsuario(this.indexActivo).restarReputacionAbsoluta(1);
+                    this.listaUsuarios.getUsuario(this.indexActivo).restarReputacionRelativa(1);
+                    //Voto negativo realizado
                 }
             }
-            //Caso que no exista
-            else
-            {
-                System.out.println("No existe ID");
-            }
+
         }
+
         
-        }*/
     }
 }

@@ -29,6 +29,8 @@ namespace FormaPrincipal
             labelTituloPregunta.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getContenido();
             labelAutor.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getAutor();
             labelFecha.Text = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).GetDate.ToString();
+            labelCantidadLikes.Text = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getVotoPositivos.ToString();
+            labelCantidadDislike.Text = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getVotoNegativos.ToString();
 
             //Datagridview, Cargar respuestas
             for (int i = 0; i < this.sistema.GetListaRespuestas.cantidadRespuestas(); i++)

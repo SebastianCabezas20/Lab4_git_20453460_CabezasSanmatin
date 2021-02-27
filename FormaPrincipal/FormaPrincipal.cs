@@ -40,6 +40,7 @@ namespace FormaPrincipal
                     labelCantidadReputacionRelativa.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacionRelativa().ToString();
                     labelCantidadReputacion.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacion().ToString();
                     labelNombreUser.Text = "Bienvenido " + sistema.GetListaUsuarios.getUsuario(sistema.getIndexActivo).getUsername();
+                    buttonVotar.Show();
                 }
                 else
                 {
@@ -86,6 +87,7 @@ namespace FormaPrincipal
                     labelReputacionRelativa.Hide();
                     labelCantidadReputacionRelativa.Hide();
                     labelNombreUser.Text = "";
+                    buttonVotar.Hide();
 
 
                 }
@@ -162,12 +164,21 @@ namespace FormaPrincipal
             labelCantidadReputacion.Hide();
             labelCantidadReputacionRelativa.Hide();
             labelReputacionRelativa.Hide();
+            buttonVotar.Hide();
 
             //Agregar etiquetas
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Java", "Descripcion de la etiqueta 1"));
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("C#", "Descripcion de la etiqueta 2"));
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Python", "Descripcion de la etiqueta 3"));
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Prolog", "Descripcion de la etiqueta 4"));
+        }
+
+        private void buttonVotar_Click(object sender, EventArgs e)
+        {
+            Votar formVotar = new Votar(sistema);
+            formVotar.ShowDialog();
+            labelCantidadReputacion.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacion().ToString();
+            labelCantidadReputacionRelativa.Text = sistema.GetListaUsuarios.getUsuario(this.sistema.getIndexActivo).getReputacionRelativa().ToString();
         }
     }
 }

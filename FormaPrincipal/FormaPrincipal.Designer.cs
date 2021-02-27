@@ -47,6 +47,7 @@ namespace FormaPrincipal
             this.labelReputacionRelativa = new System.Windows.Forms.Label();
             this.labelCantidadReputacion = new System.Windows.Forms.Label();
             this.labelCantidadReputacionRelativa = new System.Windows.Forms.Label();
+            this.buttonVotar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,10 +109,11 @@ namespace FormaPrincipal
             this.ColumnID,
             this.ColumnFecha,
             this.ColumnAutor});
-            this.dataGridViewPreguntas.Location = new System.Drawing.Point(178, 126);
+            this.dataGridViewPreguntas.Location = new System.Drawing.Point(139, 131);
             this.dataGridViewPreguntas.MultiSelect = false;
             this.dataGridViewPreguntas.Name = "dataGridViewPreguntas";
             this.dataGridViewPreguntas.ReadOnly = true;
+            this.dataGridViewPreguntas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPreguntas.Size = new System.Drawing.Size(540, 150);
             this.dataGridViewPreguntas.TabIndex = 7;
             this.dataGridViewPreguntas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPreguntas_CellDoubleClick);
@@ -212,11 +214,22 @@ namespace FormaPrincipal
             this.labelCantidadReputacionRelativa.TabIndex = 14;
             this.labelCantidadReputacionRelativa.Text = "label4";
             // 
+            // buttonVotar
+            // 
+            this.buttonVotar.Location = new System.Drawing.Point(560, 340);
+            this.buttonVotar.Name = "buttonVotar";
+            this.buttonVotar.Size = new System.Drawing.Size(105, 23);
+            this.buttonVotar.TabIndex = 15;
+            this.buttonVotar.Text = "Votar";
+            this.buttonVotar.UseVisualStyleBackColor = true;
+            this.buttonVotar.Click += new System.EventHandler(this.buttonVotar_Click);
+            // 
             // FormaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonVotar);
             this.Controls.Add(this.labelCantidadReputacionRelativa);
             this.Controls.Add(this.labelCantidadReputacion);
             this.Controls.Add(this.labelReputacionRelativa);
@@ -259,6 +272,7 @@ namespace FormaPrincipal
         private System.Windows.Forms.Label labelReputacionRelativa;
         private System.Windows.Forms.Label labelCantidadReputacion;
         private System.Windows.Forms.Label labelCantidadReputacionRelativa;
+        private System.Windows.Forms.Button buttonVotar;
     }
 }
 
