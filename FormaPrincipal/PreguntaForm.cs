@@ -76,6 +76,22 @@ namespace FormaPrincipal
                 checkedListBoxEtiquetas.Items.Add(this.sistema.GetListaEtiquetas.getEtiqueta(i).getEtiqueta(), false);
 
             }
+            labelDescripcion.Text = "";
+        }
+
+        private void buttonAgregarEtiqueta_Click(object sender, EventArgs e)
+        {
+            if (textBoxDescripcion.Text != "" && textBoxNombre.Text != "")
+            {
+                sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta(textBoxNombre.Text,textBoxDescripcion.Text));
+                checkedListBoxEtiquetas.Items.Add(textBoxNombre.Text,false);
+                MessageBox.Show("Etiqueta agregada");
+
+            }
+            else
+            {
+                MessageBox.Show("Completar informacion");
+            }
         }
     }
 }

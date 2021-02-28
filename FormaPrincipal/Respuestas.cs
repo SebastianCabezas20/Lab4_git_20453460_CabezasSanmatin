@@ -26,7 +26,8 @@ namespace FormaPrincipal
         private void Respuestas_Load(object sender, EventArgs e)
         {
             //Cargar etiquetas
-            labelTituloPregunta.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getContenido();
+            labelTituloPregunta.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getTitulo();
+            labelContenidoPregunta.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getContenido();
             labelAutor.Text = sistema.GetListaPreguntas.getPregunta(IDPregunta).getAutor();
             labelFecha.Text = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).GetDate.ToString();
             labelCantidadLikes.Text = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getVotoPositivos.ToString();
@@ -54,6 +55,7 @@ namespace FormaPrincipal
                 }
             }
 
+            //Boton de recompensa
             if (this.sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getEstado())
             {
                 //Ocultar recompensa si ya hay una respuesta aceptada
@@ -67,6 +69,16 @@ namespace FormaPrincipal
                 //Mostrar la opcion de agregar recompensa
                 int total = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).getListaRecompensa().sumarRecompensas();
                 labelCantidadRecompensa.Text = total.ToString();
+            }
+            //Etiquetas
+            //Crear grupo
+            ListViewGroup etiquetas = new ListViewGroup("Etiquetas", HorizontalAlignment.Center);
+            listViewEtiquetas.Groups.Add(etiquetas);
+            ListaEtiquetas lista = sistema.GetListaPreguntas.getPregunta(this.IDPregunta).GetListaEtiquetas;
+            for (int i = 0; i < lista.cantidadEtiquetas(); i++)
+            {
+                //Añadir item en el grupo
+                listViewEtiquetas.Items.Add(new ListViewItem(lista.getEtiqueta(i).getEtiqueta(), etiquetas));
             }
         }
 

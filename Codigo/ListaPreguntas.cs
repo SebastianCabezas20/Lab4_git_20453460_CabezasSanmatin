@@ -40,18 +40,6 @@ namespace Codigo
             }
             return false;
         }
-        /*Permite verificar que ID y username coinciden 
-        @param ID, ID a verificar
-        @param username, nombre de usuario a verificar
-        @return boolean que indicara si se verifica*/
-        public bool verificarUsername(int ID, String username)
-        {
-            if (this.getPregunta(ID).getAutor().Equals(username))
-            { //caso que el autor sea el username
-                return true;
-            }
-            return false;
-        }
         /*Permite obtener pregunta de lista preguntas mediante ID 
          @param ID, ID a buscar
          @return Pregunta, clase pregunta que se buscaba*/

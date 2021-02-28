@@ -36,22 +36,6 @@ namespace Codigo
             }
             return false;
         }
-        /*
-        Permite buscar una etiqueta mediante su nombre
-        @param nombreEtiqueta, corresponde al nombre de la etiqueta
-        @return Etiqueta, corresponde a la etiqueta buscada*/
-        public Etiqueta buscador(String nombreEtiqueta)
-        {
-            for (int i = 0; i < listaEtiquetas.Count; i++)
-            {
-                if (this.listaEtiquetas[i].getEtiqueta().Equals(nombreEtiqueta))
-                { //Si coincide el nombre de la etiqueta, se retorna
-                    return this.listaEtiquetas[i];
-                }
-            }
-            return null;
-        }
-
         public int cantidadEtiquetas()
         {
             return this.listaEtiquetas.Count;

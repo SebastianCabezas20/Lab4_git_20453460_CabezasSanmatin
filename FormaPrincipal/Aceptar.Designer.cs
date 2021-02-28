@@ -30,10 +30,10 @@ namespace FormaPrincipal
         private void InitializeComponent()
         {
             this.dataGridViewPreguntasAccept = new System.Windows.Forms.DataGridView();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.ColumnTitulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnContenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPreguntasAccept)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,26 +45,14 @@ namespace FormaPrincipal
             this.ColumnTitulo,
             this.ColumnContenido,
             this.ColumnID});
-            this.dataGridViewPreguntasAccept.Location = new System.Drawing.Point(102, 87);
+            this.dataGridViewPreguntasAccept.Location = new System.Drawing.Point(30, 77);
+            this.dataGridViewPreguntasAccept.MultiSelect = false;
             this.dataGridViewPreguntasAccept.Name = "dataGridViewPreguntasAccept";
-            this.dataGridViewPreguntasAccept.Size = new System.Drawing.Size(341, 167);
+            this.dataGridViewPreguntasAccept.ReadOnly = true;
+            this.dataGridViewPreguntasAccept.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewPreguntasAccept.Size = new System.Drawing.Size(346, 167);
             this.dataGridViewPreguntasAccept.TabIndex = 0;
             this.dataGridViewPreguntasAccept.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPreguntasAccept_CellDoubleClick);
-            // 
-            // ColumnTitulo
-            // 
-            this.ColumnTitulo.HeaderText = "Titulo";
-            this.ColumnTitulo.Name = "ColumnTitulo";
-            // 
-            // ColumnContenido
-            // 
-            this.ColumnContenido.HeaderText = "Contenido";
-            this.ColumnContenido.Name = "ColumnContenido";
-            // 
-            // ColumnID
-            // 
-            this.ColumnID.HeaderText = "ID";
-            this.ColumnID.Name = "ColumnID";
             // 
             // buttonVolver
             // 
@@ -76,11 +64,31 @@ namespace FormaPrincipal
             this.buttonVolver.UseVisualStyleBackColor = true;
             this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
+            // ColumnTitulo
+            // 
+            this.ColumnTitulo.HeaderText = "Titulo";
+            this.ColumnTitulo.Name = "ColumnTitulo";
+            this.ColumnTitulo.ReadOnly = true;
+            // 
+            // ColumnContenido
+            // 
+            this.ColumnContenido.HeaderText = "Contenido";
+            this.ColumnContenido.Name = "ColumnContenido";
+            this.ColumnContenido.ReadOnly = true;
+            this.ColumnContenido.Width = 200;
+            // 
+            // ColumnID
+            // 
+            this.ColumnID.HeaderText = "ID";
+            this.ColumnID.Name = "ColumnID";
+            this.ColumnID.ReadOnly = true;
+            this.ColumnID.Visible = false;
+            // 
             // Aceptar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 307);
+            this.ClientSize = new System.Drawing.Size(651, 319);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.dataGridViewPreguntasAccept);
             this.Name = "Aceptar";
@@ -94,9 +102,9 @@ namespace FormaPrincipal
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewPreguntasAccept;
+        private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTitulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContenido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
-        private System.Windows.Forms.Button buttonVolver;
     }
 }

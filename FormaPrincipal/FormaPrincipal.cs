@@ -25,7 +25,7 @@ namespace FormaPrincipal
             Datos formDatos = new Datos();
             if(formDatos.ShowDialog() == DialogResult.OK)
             {
-                if(sistema.login(formDatos.getUser(), formDatos.getUser()))
+                if(sistema.login(formDatos.getUser(), formDatos.getPass()))
                 {
                     MessageBox.Show("Autenticado");
                     buttonLogin.Hide();

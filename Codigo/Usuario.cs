@@ -67,11 +67,6 @@ namespace Codigo
         {
             this.reputacionRelativa = this.reputacionRelativa + Reputacion;
         }
-        /*Permite imprimir a un usuario
-        @return retornara un String que correspondera a los datos del usuario*/
-        public String imprimir()
-        {
-            return this.username + " reputacion absoluta: " + this.reputacion + " reputacion relativa: " + this.reputacionRelativa;
-        }
+        
     }
 }

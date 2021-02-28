@@ -113,28 +113,7 @@ namespace Codigo
             return ID;
         }
 
-        /*Permite imprimir la pregunta 
-        */
-        /*
-        public void imprimir()
-        {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/YYYY");
-            if (!this.estado)
-            {
-                System.out.print("\n          " + this.titulo + "\n" + " ID:" + this.ID + "   El usuario " + this.autor + "    pregunta : \n "
-                + this.contenido + "         Votos   Dislike: " + this.votosNegativos + "   Like " + this.votosPositivos + "\n "
-                + sdf.format(this.fecha) + "  estado:  " + this.estado + "  Recompensa asociada: " + this.listaRecompensa.sumarRecompensas() + "\n   etiquetas: ");
-                this.listaEtiquetas.imprimirNombre();
-            }
-            else
-            {
-                System.out.print("\n          " + this.titulo + "\n" + " ID:" + this.ID + "   El usuario " + this.autor + "    pregunta : \n "
-                + this.contenido + "         Votos   Dislike: " + this.votosNegativos + "   Like " + this.votosPositivos + "\n "
-                + sdf.format(this.fecha) + "  estado:  " + this.estado + "   Recompensa desactivada \n"
-                + "etiquetas: ");
-                this.listaEtiquetas.imprimirNombre();
-            }
-        }*/
+        
 
         /*Permite obtener aumentar la cantidad de votos, se negativo o positivo
          @return retorna una confirmacion en booleano*/

@@ -30,11 +30,11 @@ namespace FormaPrincipal
         private void InitializeComponent()
         {
             this.dataGridViewRespuestas = new System.Windows.Forms.DataGridView();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.ColumnContenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnButtonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.buttonVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,15 +51,26 @@ namespace FormaPrincipal
             this.dataGridViewRespuestas.MultiSelect = false;
             this.dataGridViewRespuestas.Name = "dataGridViewRespuestas";
             this.dataGridViewRespuestas.ReadOnly = true;
-            this.dataGridViewRespuestas.Size = new System.Drawing.Size(446, 150);
+            this.dataGridViewRespuestas.Size = new System.Drawing.Size(443, 150);
             this.dataGridViewRespuestas.TabIndex = 0;
             this.dataGridViewRespuestas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRespuestas_CellContentClick);
+            // 
+            // buttonVolver
+            // 
+            this.buttonVolver.Location = new System.Drawing.Point(614, 28);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
+            this.buttonVolver.TabIndex = 1;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // ColumnContenido
             // 
             this.ColumnContenido.HeaderText = "Contenido";
             this.ColumnContenido.Name = "ColumnContenido";
             this.ColumnContenido.ReadOnly = true;
+            this.ColumnContenido.Width = 200;
             // 
             // ColumnAutor
             // 
@@ -72,22 +83,13 @@ namespace FormaPrincipal
             this.ColumnID.HeaderText = "ID";
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.ReadOnly = true;
+            this.ColumnID.Visible = false;
             // 
             // ColumnButtonAceptar
             // 
             this.ColumnButtonAceptar.HeaderText = "Aceptar";
             this.ColumnButtonAceptar.Name = "ColumnButtonAceptar";
             this.ColumnButtonAceptar.ReadOnly = true;
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Location = new System.Drawing.Point(588, 28);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
-            this.buttonVolver.TabIndex = 1;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // RespuestasAccept
             // 
@@ -107,10 +109,10 @@ namespace FormaPrincipal
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewRespuestas;
+        private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContenido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnButtonAceptar;
-        private System.Windows.Forms.Button buttonVolver;
     }
 }

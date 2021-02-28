@@ -30,6 +30,7 @@ namespace FormaPrincipal
         private void InitializeComponent()
         {
             this.dataGridViewVotar = new System.Windows.Forms.DataGridView();
+            this.buttonVolver = new System.Windows.Forms.Button();
             this.ColumnContenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,7 +39,6 @@ namespace FormaPrincipal
             this.ColumnButtonPositivo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnButtonNegativo = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVotar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,11 +64,22 @@ namespace FormaPrincipal
             this.dataGridViewVotar.TabIndex = 0;
             this.dataGridViewVotar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVotar_CellContentClick);
             // 
+            // buttonVolver
+            // 
+            this.buttonVolver.Location = new System.Drawing.Point(28, 34);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
+            this.buttonVolver.TabIndex = 1;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            // 
             // ColumnContenido
             // 
             this.ColumnContenido.HeaderText = "Contenido";
             this.ColumnContenido.Name = "ColumnContenido";
             this.ColumnContenido.ReadOnly = true;
+            this.ColumnContenido.Width = 200;
             // 
             // ColumnTipo
             // 
@@ -111,16 +122,7 @@ namespace FormaPrincipal
             this.ColumnID.HeaderText = "ID";
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.ReadOnly = true;
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Location = new System.Drawing.Point(52, 37);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
-            this.buttonVolver.TabIndex = 1;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            this.ColumnID.Visible = false;
             // 
             // Votar
             // 
@@ -140,6 +142,7 @@ namespace FormaPrincipal
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewVotar;
+        private System.Windows.Forms.Button buttonVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnContenido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
@@ -148,6 +151,5 @@ namespace FormaPrincipal
         private System.Windows.Forms.DataGridViewButtonColumn ColumnButtonPositivo;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnButtonNegativo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
-        private System.Windows.Forms.Button buttonVolver;
     }
 }

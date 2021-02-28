@@ -81,36 +81,6 @@ namespace Codigo
             return false;
         }
 
-        /*Permite imprimir las respuestas que no sean de un usuario pero si de un ID pregunta determinado
-        @param IDPregunta ID de la pregunta buscada
-        @param username corresponde al nombre del usuario evitado*/
-        public void imprimirRespuestasNoUser(int IDPregunta, String username)
-        {
-            int respuestas = 0; // Cantidad de respuestas en total
-            for (int i = 0; i < this.listaRespuesta.Count; i++)
-            {
-                //Si la respuesta es igual al ID de la pregunta y a sido aceptada y el autor no coincide con el username
-                if (this.listaRespuesta[i].getPreguntaRespondida() == IDPregunta && this.listaRespuesta[i].getEstado() && !this.listaRespuesta[i].getAutor().Equals(username))
-                {
-                    respuestas++; //Sumamos cantidad de respuestas
-
-                }
-            }
-            if (respuestas == 0)
-            { // caso que no se encuentren respuestas para votar
-            }
-        }
-        /*permite imprimir todas las respuestas de una determinada pregunta
-        @param ID corresponde al ID de la pregunta*/
-        public void imprimirTotalRespuestas(int IDPregunta)
-        {
-            for (int i = 0; i < this.listaRespuesta.Count; i++)
-            {
-                if (this.listaRespuesta[i].getPreguntaRespondida() == IDPregunta)
-                { //Se comprueba que sea de la pregunta
-
-                }
-            }
-        }
+        
     }
 }
