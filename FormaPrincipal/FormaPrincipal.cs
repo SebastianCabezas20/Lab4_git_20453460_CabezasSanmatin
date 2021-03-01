@@ -11,15 +11,26 @@ using Codigo;
 
 namespace FormaPrincipal
 {
+    /// <summary>
+    /// Clase formulario principal
+    /// </summary>
     public partial class FormaPrincipal : Form
     {
         Sistema sistema;
+        /// <summary>
+        /// Crea un formulario principal
+        /// </summary>
         public FormaPrincipal()
         {
             InitializeComponent();
             this.sistema = new Sistema();
         }
 
+        /// <summary>
+        /// Permite autenticar a un usuario
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Datos formDatos = new Datos();
@@ -50,6 +61,11 @@ namespace FormaPrincipal
 
         }
 
+        /// <summary>
+        /// Permite registrar a un usuario
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             Datos formRegister = new Datos();
@@ -68,7 +84,11 @@ namespace FormaPrincipal
             }
         }
 
-        //Logout
+        /// <summary>
+        /// Permite cerrar sesion
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void button3_Click(object sender, EventArgs e)
         {
             Datos formLogout = new Datos();
@@ -98,11 +118,21 @@ namespace FormaPrincipal
             }
         }
 
+        /// <summary>
+        /// Permite salir de la aplicacion
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Permite agregar una pregunta
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonAgregarPregunta_Click(object sender, EventArgs e)
         {
             PreguntaForm preguntaForm = new PreguntaForm(sistema);
@@ -128,6 +158,11 @@ namespace FormaPrincipal
             }
         }
 
+        /// <summary>
+        /// Evento de realizar doble click en una celda
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void dataGridViewPreguntas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -144,6 +179,11 @@ namespace FormaPrincipal
 
         }
 
+        /// <summary>
+        /// Permite aceptar respuestas
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonAceptarRespuestas_Click(object sender, EventArgs e)
         {
             Aceptar formaAceptar = new Aceptar(sistema);
@@ -153,6 +193,11 @@ namespace FormaPrincipal
 
         }
 
+        /// <summary>
+        /// Permite cargar labels y botones
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void FormaPrincipal_Load(object sender, EventArgs e)
         {
             //Ocultar botones
@@ -166,13 +211,27 @@ namespace FormaPrincipal
             labelReputacionRelativa.Hide();
             buttonVotar.Hide();
 
+            sistema.Register("user1", "pass1");
+            sistema.Register("user2", "pass2");
+            sistema.Register("user3", "pass3");
+           
+
+
             //Agregar etiquetas
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Java", "Descripcion de la etiqueta 1"));
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("C#", "Descripcion de la etiqueta 2"));
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Python", "Descripcion de la etiqueta 3"));
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Prolog", "Descripcion de la etiqueta 4"));
+
+
+           
         }
 
+        /// <summary>
+        /// Permite votar 
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonVotar_Click(object sender, EventArgs e)
         {
             Votar formVotar = new Votar(sistema);

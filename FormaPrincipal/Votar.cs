@@ -11,15 +11,26 @@ using Codigo;
 
 namespace FormaPrincipal
 {
+    /// <summary>
+    /// Clase parcial del formulario para votar
+    /// </summary>
     public partial class Votar : Form
     {
         Sistema sistema;
+        /// <summary>
+        /// Permite crear el formulario
+        /// </summary>
+        /// <param name="sistem">Clase sistema.</param>
         public Votar(Sistema sistem)
         {
             InitializeComponent();
             this.sistema = sistem;
         }
-
+        /// <summary>
+        /// Permite cargar las preguntas y respuestas
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void Votar_Load(object sender, EventArgs e)
         {
             //Cargar preguntas
@@ -63,6 +74,11 @@ namespace FormaPrincipal
             dataGridViewVotar.Sort(dataGridViewVotar.Columns["ColumnFecha"], ListSortDirection.Ascending);
         }
 
+        /// <summary>
+        /// Permite votar mediante un boton
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void dataGridViewVotar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexColumna = e.ColumnIndex;
@@ -86,6 +102,11 @@ namespace FormaPrincipal
             }
         }
 
+        /// <summary>
+        /// Permite cerrar el formulario
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonVolver_Click(object sender, EventArgs e)
         {
             Close();

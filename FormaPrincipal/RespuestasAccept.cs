@@ -11,10 +11,18 @@ using Codigo;
 
 namespace FormaPrincipal
 {
+    /// <summary>
+    /// Clase del formulario de respuestas a aceptar
+    /// </summary>
     public partial class RespuestasAccept : Form
     {
         private Sistema sistema;
         private int IDPregunta;
+        /// <summary>
+        /// Permite crear el formulario
+        /// </summary>
+        /// <param name="ID">Numero entero.</param>
+        /// <param name="sistem">Clase sistema.</param>
         public RespuestasAccept(int ID, Sistema sistem)
         {
             InitializeComponent();
@@ -22,6 +30,11 @@ namespace FormaPrincipal
             this.IDPregunta = ID;
         }
 
+        /// <summary>
+        /// Accion de click al boton de aceptar
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void dataGridViewRespuestas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int indexFila = e.RowIndex;//Index de la fila   
@@ -38,6 +51,11 @@ namespace FormaPrincipal
 
         }
 
+        /// <summary>
+        /// Permite cargar las respuesta para aceptar
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void RespuestasAccept_Load(object sender, EventArgs e)
         {
             int mostrar = 0;
@@ -57,8 +75,13 @@ namespace FormaPrincipal
             if (mostrar == 0)
             {
                 dataGridViewRespuestas.Hide();
+                labelAviso.Text = "NO TIENE PREGUNTAS PENDIENTES";
             }
-            //ADv lal Vis
+            else
+            {
+                labelAviso.Hide();
+            }
+            
         }
 
         private void buttonVolver_Click(object sender, EventArgs e)

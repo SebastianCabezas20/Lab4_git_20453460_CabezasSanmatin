@@ -115,7 +115,7 @@ namespace FormaPrincipal
             this.dataGridViewPreguntas.Name = "dataGridViewPreguntas";
             this.dataGridViewPreguntas.ReadOnly = true;
             this.dataGridViewPreguntas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPreguntas.Size = new System.Drawing.Size(589, 150);
+            this.dataGridViewPreguntas.Size = new System.Drawing.Size(642, 150);
             this.dataGridViewPreguntas.TabIndex = 7;
             this.dataGridViewPreguntas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPreguntas_CellDoubleClick);
             // 
@@ -200,7 +200,7 @@ namespace FormaPrincipal
             this.ColumnTitulo.HeaderText = "Titulo";
             this.ColumnTitulo.Name = "ColumnTitulo";
             this.ColumnTitulo.ReadOnly = true;
-            this.ColumnTitulo.Visible = false;
+            this.ColumnTitulo.Width = 150;
             // 
             // ColumnContenido
             // 
@@ -214,6 +214,7 @@ namespace FormaPrincipal
             this.ColumnID.HeaderText = "ID";
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.ReadOnly = true;
+            this.ColumnID.Visible = false;
             // 
             // ColumnFecha
             // 

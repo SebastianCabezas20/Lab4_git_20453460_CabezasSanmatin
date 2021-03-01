@@ -11,11 +11,19 @@ using Codigo;
 
 namespace FormaPrincipal
 {
+    /// <summary>
+    /// Clase parcial de la forma la cual pertenece a las respuestas
+    /// </summary>
     public partial class Respuestas : Form
     {
         private Sistema sistema;
         private int IDPregunta;
 
+        /// <summary>
+        /// Permite crear el formulario
+        /// </summary>
+        /// <param name="sistem">Clase sistema.</param>
+        /// <param name="ID">Numero entero.</param>
         public Respuestas(Sistema sistem,int ID)
         {
             InitializeComponent();
@@ -23,6 +31,11 @@ namespace FormaPrincipal
             this.sistema = sistem;
         }
 
+        /// <summary>
+        /// Permite cargar las respuestas y labels del formulario
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void Respuestas_Load(object sender, EventArgs e)
         {
             //Cargar etiquetas
@@ -82,6 +95,11 @@ namespace FormaPrincipal
             }
         }
 
+        /// <summary>
+        /// Permite agregar una respuesta  
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonAgregarRespuesta_Click(object sender, EventArgs e)
         {
             if (textBoxContenidoRespuesta.Text != "")
@@ -99,6 +117,11 @@ namespace FormaPrincipal
             }
         }
 
+        /// <summary>
+        /// Permite agregar una recompensa a la pregunta
+        /// </summary>
+        /// <param name="sender">Object.</param>
+        /// <param name="e">eventArgs.</param>
         private void buttonAgregarRecompensa_Click(object sender, EventArgs e)
         {
             int recompensa = Convert.ToInt32(textBoxRecompensa.Text);

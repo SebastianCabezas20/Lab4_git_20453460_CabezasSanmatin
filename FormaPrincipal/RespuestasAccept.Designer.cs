@@ -30,11 +30,12 @@ namespace FormaPrincipal
         private void InitializeComponent()
         {
             this.dataGridViewRespuestas = new System.Windows.Forms.DataGridView();
-            this.buttonVolver = new System.Windows.Forms.Button();
             this.ColumnContenido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAutor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnButtonAceptar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.buttonVolver = new System.Windows.Forms.Button();
+            this.labelAviso = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,16 +55,6 @@ namespace FormaPrincipal
             this.dataGridViewRespuestas.Size = new System.Drawing.Size(443, 150);
             this.dataGridViewRespuestas.TabIndex = 0;
             this.dataGridViewRespuestas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewRespuestas_CellContentClick);
-            // 
-            // buttonVolver
-            // 
-            this.buttonVolver.Location = new System.Drawing.Point(614, 28);
-            this.buttonVolver.Name = "buttonVolver";
-            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
-            this.buttonVolver.TabIndex = 1;
-            this.buttonVolver.Text = "Volver";
-            this.buttonVolver.UseVisualStyleBackColor = true;
-            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
             // 
             // ColumnContenido
             // 
@@ -91,11 +82,32 @@ namespace FormaPrincipal
             this.ColumnButtonAceptar.Name = "ColumnButtonAceptar";
             this.ColumnButtonAceptar.ReadOnly = true;
             // 
+            // buttonVolver
+            // 
+            this.buttonVolver.Location = new System.Drawing.Point(614, 28);
+            this.buttonVolver.Name = "buttonVolver";
+            this.buttonVolver.Size = new System.Drawing.Size(75, 23);
+            this.buttonVolver.TabIndex = 1;
+            this.buttonVolver.Text = "Volver";
+            this.buttonVolver.UseVisualStyleBackColor = true;
+            this.buttonVolver.Click += new System.EventHandler(this.buttonVolver_Click);
+            // 
+            // labelAviso
+            // 
+            this.labelAviso.AutoSize = true;
+            this.labelAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAviso.Location = new System.Drawing.Point(149, 181);
+            this.labelAviso.Name = "labelAviso";
+            this.labelAviso.Size = new System.Drawing.Size(256, 16);
+            this.labelAviso.TabIndex = 2;
+            this.labelAviso.Text = "NO TIENE RESPUESTAS PENDIENTES";
+            // 
             // RespuestasAccept
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(713, 251);
+            this.Controls.Add(this.labelAviso);
             this.Controls.Add(this.buttonVolver);
             this.Controls.Add(this.dataGridViewRespuestas);
             this.Name = "RespuestasAccept";
@@ -103,6 +115,7 @@ namespace FormaPrincipal
             this.Load += new System.EventHandler(this.RespuestasAccept_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,5 +127,6 @@ namespace FormaPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAutor;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnButtonAceptar;
+        private System.Windows.Forms.Label labelAviso;
     }
 }
