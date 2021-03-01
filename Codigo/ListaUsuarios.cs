@@ -4,26 +4,40 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase lista de usuarios.
+    /// </summary>
     public class ListaUsuarios
     {
-        private List<Usuario> listaUsuarios; // ArrayList que contendra los usuarios
-        /*Crea una lista de usuarios*/
+        private List<Usuario> listaUsuarios; // List que contendra los usuarios
+
+        /// <summary>
+        /// Crea una lista de usuarios.
+        /// </summary>
         public ListaUsuarios()
         {
             this.listaUsuarios = new List<Usuario>();
         }
-        /*
-        Permite obtener un usuario de la lista mediante su index
-        @param index, numero del index del usuario
-        @return Usuario del index*/
+
+        /// <summary>
+        /// Obtiene un usuario mediante un index.
+        /// </summary>
+        /// <returns>
+        /// Usuario de la clase usuario.
+        /// </returns>
+        /// <param name="index">Un numero entero.</param>
         public Usuario getUsuario(int index)
         {
             return this.listaUsuarios[index];
         }
-        /*
-        Permite verificar que no exista username ingresado
-        @param username, nombre de usuario a verificar
-        @return boolean que indica si se verifica o no*/
+
+        /// <summary>
+        /// Verifica si existe un usuario con un determinado Username.
+        /// </summary>
+        /// <returns>
+        /// Booleano que verifica si existe el usuario.
+        /// </returns>
+        /// <param name="username">Un string.</param>
         public bool verificarUsuario(String username)
         {
             for (int i = 0; i < this.listaUsuarios.Count; i++)
@@ -35,18 +49,23 @@ namespace Codigo
             }
             return true;
         }
-        /*
-        Permite agregar un usuario a la lista
-        @param usuario, clase de usuario que se quiere agregar*/
+
+        /// <summary>
+        /// Agrega un usuarios a la lista de usuarios
+        /// </summary>
+        /// <param name="usuario">Un usuario de la clase usuario.</param>
         public void agregarUsuario(Usuario usuario)
         {
             this.listaUsuarios.Add(usuario);
         }
-        /*
-        Permite obtener verificar si conciden los datos a un usuario
-        @param username, nombre de usuario a verificar
-        @param pass, contraseña de usuario a verificar
-        @return Retorna el index de usuario verificado*/
+        /// <summary>
+        /// Verifica si existe un username con los datos dados
+        /// </summary>
+        /// <returns>
+        /// Entero con el index del usuario.
+        /// </returns>
+        /// <param name="username">Un string.</param>
+        /// <param name="pass">Un string.</param>
         public int autenticar(String username, String pass)
         {
             for (int i = 0; i < this.listaUsuarios.Count; i++)
@@ -59,10 +78,14 @@ namespace Codigo
             }
             return -1;
         }
-        /*
-        Permite obtener un usuario de la lista mediante su nombre
-        @param username, useriname que sera buscado
-        @return Usuario del username*/
+
+        /// <summary>
+        /// Busca un usuario mediante un username.
+        /// </summary>
+        /// <returns>
+        /// Usuario de la clase usuario.
+        /// </returns>
+        /// <param name="username">Un string.</param>
         public Usuario getUsuarioUsername(String username)
         {
             for (int i = 0; i < this.listaUsuarios.Count; i++)

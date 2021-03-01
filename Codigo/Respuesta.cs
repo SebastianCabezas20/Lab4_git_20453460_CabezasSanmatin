@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase respuesta.
+    /// </summary>
     public class Respuesta
     {
         private int ID; //ID unico 
@@ -15,11 +18,13 @@ namespace Codigo
         private int votosPositivos; //votos
         private int votosNegativos;
 
-        /*Permite construir una respuesta
-        @param IDGeneral ID de la respuesta
-        @param contenido corresponde al contenido de la respuesta
-        @param autor autor de la respuesta
-        @param preguntaRespondida, ID de la pregunta a responder*/
+        /// <summary>
+        /// Crea una respuesta
+        /// </summary>
+        /// <param name="IDGeneral">Un numero entero.</param>
+        /// <param name="contenido">String.</param>
+        /// <param name="autor">String.</param>
+        /// <param name="preguntaRespondida">Un numero entero.</param>
         public Respuesta(int IDGeneral, String contenido, String autor, int preguntaRespondida)
         {
             this.votosPositivos = 0;
@@ -31,25 +36,44 @@ namespace Codigo
             this.fecha = DateTime.Today.AddDays(2 + this.ID);
             this.preguntaRespondida = preguntaRespondida;
         }
-        /*Permite obtener el ID de la respuesta
-        @return ID de la respuesta que corresponde a un enntero*/
+
+        /// <summary>
+        /// Permite obtener el ID de la respuesta.
+        /// </summary>
+        /// <returns>
+        /// Numero con el ID de la respuesta.
+        /// </returns>
         public int getID()
         {
             return ID;
         }
-        /*Permite obtener el estaod de la pregunta
-        @return retorna el estado de la respuesta que en este caso es un boolean*/
+
+        /// <summary>
+        /// Permite obtener el estado de la respuesta.
+        /// </summary>
+        /// <returns>
+        /// Booleano que permite obtener el estado.
+        /// </returns>
         public bool getEstado()
         {
             return estado;
         }
-        /*Permite cambiar el estado de la respuesta
-        @param estado, corresponde al nuevo estado de la respuesta*/
+
+        /// <summary>
+        /// Permite cambiar el estado de la respuesta
+        /// </summary>
+        /// <param name="estado">Booleano.</param>
         public void setEstado(bool estado)
         {
             this.estado = estado;
         }
 
+        /// <summary>
+        /// Permite obtener el contenido de la pregunta.
+        /// </summary>
+        /// <returns>
+        /// String con el contenido de la respuesta.
+        /// </returns>
         public String getContenido
         {
             get
@@ -58,19 +82,34 @@ namespace Codigo
             }
         }
 
-        /*Permite obtener el ID de la pregunta respondida
-        @return ID de pregunta respondida de la respuesta*/
+        /// <summary>
+        /// Permite obtener el ID de la pregunta respondida.
+        /// </summary>
+        /// <returns>
+        /// Entero con el ID de la pregunta.
+        /// </returns>
         public int getPreguntaRespondida()
         {
             return preguntaRespondida;
         }
-        /*Permite obtener el nombre del autor de la respuesta
-        @return retorna el nombre del autor de la respuesta*/
+
+        /// <summary>
+        /// Permite obtener el autor de la respuesta
+        /// </summary>
+        /// <returns>
+        /// String con el autor de la respuesta.
+        /// </returns>
         public String getAutor()
         {
             return autor;
         }
 
+        /// <summary>
+        /// Permite obtener la fechad de la respuesta.
+        /// </summary>
+        /// <returns>
+        /// Date fecha de la respuesta.
+        /// </returns>
         public DateTime GetDate
         {
             get
@@ -79,6 +118,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite obtener la cantidad de votos positivos.
+        /// </summary>
+        /// <returns>
+        /// Entero con la cantidad de votos positivos de la respuesta.
+        /// </returns>
         public int getVotoPositivos
         {
             get
@@ -87,6 +132,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite obtener la cantidad de votos negativos.
+        /// </summary>
+        /// <returns>
+        /// Entero con la cantidad de votos negativos de la respuesta.
+        /// </returns>
         public int getVotoNegativos
         {
             get
@@ -95,9 +146,13 @@ namespace Codigo
             }
         }
 
-        /*Permite aumentar el voto negativo o positivo
-        @param opcion da a conocer si es negativo o positivo
-        @return booleano que permite verificar el voto*/
+        /// <summary>
+        /// Permite aumentar votos
+        /// </summary>
+        /// <returns>
+        /// booleano que permite saber si fue positivo o negativo.
+        /// </returns>
+        /// <param name="opcion">Booleano.</param>
         public bool aumentarVoto(bool opcion)
         {
             if (opcion)

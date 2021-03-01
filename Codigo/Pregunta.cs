@@ -17,13 +17,14 @@ namespace Codigo
         private int votosPositivos;
         private int votosNegativos;
 
-        /*
-        Constructor de una pregunta
-        @param ID, ID de la pregunta
-        @param titulo, String que contiene el titulo de la pregunta
-        @param contenido String que contiene el contenido de la pregunta
-        @param etiqeutas se refiere a la clase ListaEtiquetas
-        @param autor corresponde al autor de la pregunta*/
+        /// <summary>
+        /// Crea una pregunta
+        /// </summary>
+        /// <param name="ID">Un numero entero.</param>
+        /// <param name="titulo">String.</param>
+        /// <param name="contenido">String.</param>
+        /// <param name="etiquetas">Una lista de etiquetas (clase etiqueta).</param>
+        /// <param name="autor">String.</param>
         public Pregunta(int ID, String titulo, String contenido, ListaEtiquetas etiquetas, String autor)
         {
             this.votosPositivos = 0;
@@ -35,21 +36,37 @@ namespace Codigo
             this.listaRecompensa = new ListaRecompensas();
             this.listaEtiqueta = etiquetas;
             this.autor = autor;
-            this.estado = false;
+            this.estado = false;//Sin preguntas aceptadas
         }
 
-        /*Permite obtener el autor e la pregunta
-         @return retorna el nombre del usuario*/
+        /// <summary>
+        /// Obtener el autor de la pregunta
+        /// </summary>
+        /// <returns>
+        /// String con el nombre del autor.
+        /// </returns>
         public String getAutor()
         {
             return autor;
         }
 
+        /// <summary>
+        /// Obtener el titulo de la pregunta
+        /// </summary>
+        /// <returns>
+        /// String con el titulo de la pregunta.
+        /// </returns>
         public string getTitulo()
         {
             return this.titulo;
         }
 
+        /// <summary>
+        /// Obtener la fecha de la pregunta
+        /// </summary>
+        /// <returns>
+        /// Date con la fecha de la pregunta.
+        /// </returns>
         public DateTime GetDate
         {
             get
@@ -58,6 +75,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Obtener los votos positivos de la pregunta
+        /// </summary>
+        /// <returns>
+        /// Numero con la cantidad de votos positivos.
+        /// </returns>
         public int getVotoPositivos
         {
             get
@@ -66,6 +89,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Obtener los votos negativos de la pregunta
+        /// </summary>
+        /// <returns>
+        /// Numero con la cantidad de votos negativos.
+        /// </returns>
         public int getVotoNegativos
         {
             get
@@ -74,6 +103,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Obtener la lista de etiquetas
+        /// </summary>
+        /// <returns>
+        /// Clase lista de etiquetas.
+        /// </returns>
         public ListaEtiquetas GetListaEtiquetas
         {
             get
@@ -82,41 +117,66 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Obtener el contenido de la pregunta
+        /// </summary>
+        /// <returns>
+        /// String con el contenido de la pregunta.
+        /// </returns>
         public string getContenido()
         {
             return this.contenido;
         }
-        /*Permite obtener el estado de la pregunta
-        @return retorna el estado de la pregunta que corresponde a un boolean*/
+
+        /// <summary>
+        /// Obtener el estado de la pregunta
+        /// </summary>
+        /// <returns>
+        /// Booleano con el estado de la pregunta.
+        /// </returns>
         public bool getEstado()
         {
             return estado;
         }
-        /*Permite cambiar el estaod de la pregunta
-        @param estado corresponde a un booleano que sera el nuevo estado
-        */
+
+        /// <summary>
+        /// Permite cambiar el estado de la pregunta
+        /// </summary>
+        /// <param name="estado">Booleano.</param>
         public void setEstado(bool estado)
         {
             this.estado = estado;
         }
-        /*Permite obtener la lista de recompensas de la pregunta
-        @return retorna la clase lista de recompensas*/
+
+        /// <summary>
+        /// Permite obtener la lista recompensas.
+        /// </summary>
+        /// <returns>
+        /// Clase lista de recompensas.
+        /// </returns>
         public ListaRecompensas getListaRecompensa()
         {
             return listaRecompensa;
         }
 
-        /*Permite obtener el id de la pregunta
-        @return retorna el numero del ID*/
+        /// <summary>
+        /// Permite obtener el ID de la pregunta
+        /// </summary>
+        /// <returns>
+        /// Entero con el ID de la pregunta.
+        /// </returns>
         public int getID()
         {
             return ID;
         }
 
-        
-
-        /*Permite obtener aumentar la cantidad de votos, se negativo o positivo
-         @return retorna una confirmacion en booleano*/
+        /// <summary>
+        /// Permite aumentar votos
+        /// </summary>
+        /// <returns>
+        /// booleano que permite saber si fue positivo o negativo.
+        /// </returns>
+        /// <param name="opcion">Booleano.</param>
         public bool aumentarVoto(bool opcion)
         {
             if (opcion)

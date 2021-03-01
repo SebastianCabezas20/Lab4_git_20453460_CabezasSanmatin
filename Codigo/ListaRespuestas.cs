@@ -4,29 +4,47 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase lista de respuestas.
+    /// </summary>
     public class ListaRespuestas
     {
         private List<Respuesta> listaRespuesta; // ArrayList que almacenara las respuestas
-        /*Constructor de lista respuestas*/
+        /// <summary>
+        /// Crea una lista de respuestas.
+        /// </summary>
         public ListaRespuestas()
         {
             this.listaRespuesta = new List<Respuesta>();
         }
-        /*Permite agregar una respuesta a la lista de respuestas
-        @param respuesta corresponde a una objeto de la clase Respuesta*/
+
+        /// <summary>
+        /// Agrega una respuesta a la lista de respuestas.
+        /// </summary>
+        /// <param name="respuesta">Respuesta de la clase respuesta.</param>
         public void agregarRespuesta(Respuesta respuesta)
         {
             this.listaRespuesta.Add(respuesta);
         }
-        /*Permite obtener la cantidad total de respuestas
-        @return retorna el numero de respuestas*/
+
+        /// <summary>
+        /// Obtiene la cantidad de respuesta de la lista.
+        /// </summary>
+        /// <returns>
+        /// Numero con la cantidad de respuestas.
+        /// </returns>
         public int cantidadRespuestas()
         {
             return this.listaRespuesta.Count;
         }
-        /*Permite obtener una respuesta en base a su ID
-        @param ID corresponde al ID buscado
-        @return retorna un objeto de la clase Respuesta*/
+
+        /// <summary>
+        /// Busca un respuesta mediante el ID.
+        /// </summary>
+        /// <returns>
+        /// Una respuesta de la clase respuesta.
+        /// </returns>
+        /// <param name="ID">Un numero entero.</param>
         public Respuesta getRespuesta(int ID)
         {
             for (int i = 0; i < this.listaRespuesta.Count; i++)
@@ -39,16 +57,28 @@ namespace Codigo
             return null;
         }
 
+        /// <summary>
+        /// Obtener una respuesta mediante el index
+        /// </summary>
+        /// <returns>
+        /// Respuesta de al clase respuesta.
+        /// </returns>
+        /// <param name="index">Un numero entero.</param>
         public Respuesta gerRespuetaIndex(int index)
         {
             return this.listaRespuesta[index];
         }
 
-        /*Permite verificar si existe ID en la lista de respuestas
-        @param ID corresponde al ID buscado
-        @return retorna un booleano que indica si existe ID*/
+        /// <summary>
+        /// Verifica si existe el ID en la lista de respuesta
+        /// </summary>
+        /// <returns>
+        /// booleano el cual verifica la situacion.
+        /// </returns>
+        /// <param name="ID">Un numero entero.</param>
         public bool verificarID(int ID)
         {
+            //Busca en la lista
             for (int i = 0; i < this.listaRespuesta.Count; i++)
             {
                 if (this.listaRespuesta[i].getID() == ID)
@@ -58,8 +88,15 @@ namespace Codigo
             }
             return false;
         }
-        /*Permite imprimir respuesta de una determinada pregunta siempre que no este aceptada
-        @param ID corresponde al ID de la pregunta */
+
+        /// <summary>
+        /// Verifica si la respuesta es de una pregunta dada
+        /// </summary>
+        /// <returns>
+        /// Booleano que indica si es de la pregunta.
+        /// </returns>
+        /// <param name="IDPregunta">Un numero entero.</param>
+        /// <param name="index">Un numero entero.</param>
         public bool verificarRespuesta(int IDPregunta, int index)
         {
             // Si tiene el ID de la pregunta buscada y el estado es aceptada-------------------
@@ -70,7 +107,14 @@ namespace Codigo
             return false;
         }
 
-
+        /// <summary>
+        /// Verificar si la respuesta es de la pregunta y esta aceptada.
+        /// </summary>
+        /// <returns>
+        /// Booleano que verifica si es de la pregunta y esta aceptada.
+        /// </returns>
+        /// <param name="IDPregunta">Un numero entero.</param>
+        /// <param name="index">Un numero entero.</param>
         public bool verificarRespuestaNoAceptada(int IDPregunta, int index)
         {
             // Si tiene el ID de la pregunta buscada y el estado es aceptada

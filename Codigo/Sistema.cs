@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase sistema general
+    /// </summary>
     public class Sistema
     {
         private int IDgeneral;//ID unico e incremental
@@ -13,7 +16,9 @@ namespace Codigo
         private ListaRespuestas listaRespuestas;//lista respuestas del stack
         private int indexActivo;//index del usuario activo
 
-        /*Permite crear un stack vacio*/
+        /// <summary>
+        /// Permite crear un sistema 
+        /// </summary>
         public Sistema()
         {
             this.listaUsuarios = new ListaUsuarios();
@@ -24,6 +29,12 @@ namespace Codigo
             this.IDgeneral = 1;
         }
 
+        /// <summary>
+        /// Permite obtener la lista de usuarios
+        /// </summary>
+        /// <returns>
+        /// Clase Lista de usuario.
+        /// </returns>
         public ListaUsuarios GetListaUsuarios
         {
             get
@@ -32,6 +43,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite obtener la lista de preguntas
+        /// </summary>
+        /// <returns>
+        /// Clase lista de preguntas.
+        /// </returns>
         public ListaPreguntas GetListaPreguntas
         {
             get
@@ -40,6 +57,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite obtener lista de respuestas
+        /// </summary>
+        /// <returns>
+        /// Clase lista de respuestas.
+        /// </returns>
         public ListaRespuestas GetListaRespuestas
         {
             get
@@ -48,6 +71,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite obtener lista de etiquetas
+        /// </summary>
+        /// <returns>
+        /// Clase lista de etiquetas.
+        /// </returns>
         public ListaEtiquetas GetListaEtiquetas
         {
             get
@@ -56,6 +85,12 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite obtener index del usuario activo
+        /// </summary>
+        /// <returns>
+        /// Numero con el index activo.
+        /// </returns>
         public int getIndexActivo
         {
             get
@@ -63,9 +98,15 @@ namespace Codigo
                 return this.indexActivo;
             }
         }
-        /*Permite registrar a un usuario en el stack
-         @param username es el nombre de usuario 
-         @param pass contrasena del usuario*/
+
+        /// <summary>
+        /// Permite registrar un usuario
+        /// </summary>
+        /// <returns>
+        /// booleano que permite saber si fue exitoso el registro.
+        /// </returns>
+        /// <param name="username">String.</param>
+        /// <param name="pass">String.</param>
         public bool Register(String username, String pass)
         {
             if (this.listaUsuarios.verificarUsuario(username) && username != "" && pass != "")
@@ -79,6 +120,14 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite autenticar a un usuario
+        /// </summary>
+        /// <returns>
+        /// booleano que permite saber si se pudo autenticar.
+        /// </returns>
+        /// <param name="username">String.</param>
+        /// <param name="pass">String.</param>
         public bool login(String usermane, String pass)
         {
             int index = this.listaUsuarios.autenticar(usermane, pass);//Se verifica que concida el username y pass
@@ -93,6 +142,14 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite cerrar sesion de un usuario
+        /// </summary>
+        /// <returns>
+        /// booleano que permite saber si fue exitoso el cierre de sesion.
+        /// </returns>
+        /// <param name="username">String.</param>
+        /// /// <param name="pass">String.</param>
         public bool logout(String username, String pass)
         {
             //Se verifica que los datos sean del usuario activo
@@ -108,6 +165,15 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite agregar una pregunta a la lista de preguntas
+        /// </summary>
+        /// <returns>
+        /// booleano que permite saber si fue exitoso el registro de la pregunta.
+        /// </returns>
+        /// <param name="titulo">String.</param>
+        /// <param name="etiquetas">Clase lista de etiquetas.</param>
+        /// <param name="contenido">String.</param>
         public bool ask(String titulo, ListaEtiquetas etiquetas, String contenido)
         {
             if (titulo != "" && contenido != "")
@@ -124,6 +190,11 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite agregar una respuesta a una pregunta
+        /// </summary>
+        /// <param name="ID">Numero entero.</param>
+        /// <param name="contenido">String.</param>
         public void answer(int ID, String contenido)
         {
             Respuesta respuesta = new Respuesta(this.IDgeneral, contenido, this.listaUsuarios.getUsuario(this.indexActivo).getUsername(), ID);
@@ -132,15 +203,23 @@ namespace Codigo
 
         }
 
+        /// <summary>
+        /// Permite agregar una recompensa a una pregunta
+        /// </summary>
+        /// <returns>
+        /// booleano que permite saber si fue exitoso la recompensa.
+        /// </returns>
+        /// <param name="ID">Numero entero.</param>
+        /// <param name="recompensa">Numero entero.</param>
         public bool reward(int ID, int recompensa)
         {
 
             if (recompensa <= this.listaUsuarios.getUsuario(this.indexActivo).getReputacionRelativa())
             {
                 //Caso que tenga suficiente reputacion
-                Recompensa nuevaRecompensa = new Recompensa(recompensa, this.indexActivo);
+                Recompensa nuevaRecompensa = new Recompensa(recompensa, this.indexActivo);//Se crea una recompensa
                 this.listaUsuarios.getUsuario(this.indexActivo).restarReputacionRelativa(recompensa); //Se resta a la relativa
-                this.listaPreguntas.getPregunta(ID).getListaRecompensa().agregarRecompensa(nuevaRecompensa);
+                this.listaPreguntas.getPregunta(ID).getListaRecompensa().agregarRecompensa(nuevaRecompensa);//Se agrega
                 return true;
 
             }
@@ -150,6 +229,11 @@ namespace Codigo
             }
         }
 
+        /// <summary>
+        /// Permite aceptar una respuesta de una determinada pregunta
+        /// </summary>
+        /// <param name="IDPregunta">Numero entero.</param>
+        /// <param name="IDRespuesta">Numero entero.</param>
         public void accept(int IDPregunta, int IDRespuesta)
         {
             //existe recompensa
@@ -164,7 +248,7 @@ namespace Codigo
                     int indexOfrecido = this.listaPreguntas.getPregunta(IDPregunta).getListaRecompensa().getRecompensa(i).getUsuarioRecompensa();
                     recompensaTotal = recompensaTotal + recompensaCobrada; //Se suma recompensa 
                     this.listaUsuarios.getUsuario(indexOfrecido).restarReputacionAbsoluta(recompensaCobrada);//Restar a usuario
-                    this.listaUsuarios.getUsuario(indexOfrecido).restarReputacionRelativa(recompensaCobrada);//Restar a usuario
+                    
                 }
                 //Se cambian los estados
                 this.listaPreguntas.getPregunta(IDPregunta).setEstado(true);
@@ -186,6 +270,11 @@ namespace Codigo
             this.listaUsuarios.getUsuario(this.indexActivo).sumarReputacionAbsoluta(2);
         }
 
+        /// <summary>
+        /// Permite votar una pregunta o respuesta
+        /// </summary>
+        /// <param name="ID">Un numero entero.</param>
+        /// <param name="opcion">Booleano.</param>
         public void vote(int ID, bool opcion)
         {
             //Se verifica que existe ID pregunta

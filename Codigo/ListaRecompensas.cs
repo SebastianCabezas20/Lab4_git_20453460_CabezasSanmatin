@@ -4,35 +4,59 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase lista de recompensas
+    /// </summary>
     public class ListaRecompensas
     {
         private List<Recompensa> listaRecompensa; //ArrayList que almacenara las recompensas
-        /*Construye una nueva lista de recompensas*/
+
+        /// <summary>
+        /// Crea una lista de recompensas
+        /// </summary>
         public ListaRecompensas()
         {
             this.listaRecompensa = new List<Recompensa>();
         }
-        /*Permite agregar una recompensa a la lista de recompensas
-        @param recompensa corresponde a un onjeto de clase Recompensa*/
+
+        /// <summary>
+        /// Agrega una recompensa en la lista de recompensa.
+        /// </summary>
+        /// <param name="recompensa">Recompensa de la clase recompensa.</param>
         public void agregarRecompensa(Recompensa recompensa)
         {
             this.listaRecompensa.Add(recompensa);
         }
-        /*Calcular la cantidad de recompensas en la lista
-        @return cantidad de recompensas */
+
+        /// <summary>
+        /// Obtiene la cantidad de recompensas de la lista
+        /// </summary>
+        /// <returns>
+        /// Numero con la cantidad de recompensas.
+        /// </returns>
         public int cantidadRecompensas()
         {
             return this.listaRecompensa.Count;
         }
-        /*Permite obtener una recompensa de la lista mediante su index
-        @param index, correponde  al index de la pregunta a buscar
-        @return objeto de clase Recompensa que corresponde a la recompensa en el index*/
+
+        /// <summary>
+        /// Obtiene una recompensa mediante un index.
+        /// </summary>
+        /// <returns>
+        /// Recompensa de la clase recompensa.
+        /// </returns>
+        /// <param name="index">Numero que corresponde al index.</param>
         public Recompensa getRecompensa(int index)
         {
             return this.listaRecompensa[index];
         }
-        /*Perimite sumar todas las recompensas
-        @return cantidad total de recompensas en reputacion*/
+
+        /// <summary>
+        /// Suma las cantidades(valores) de todas las recompensas de la lista.
+        /// </summary>
+        /// <returns>
+        /// Numero con la suma total de la cantidad(valor) de recompensas.
+        /// </returns>
         public int sumarRecompensas()
         {
             int total = 0; //Contador total

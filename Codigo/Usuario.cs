@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase usuario
+    /// </summary>
     public class Usuario
     {
         private string username; //Nombre del usuario
@@ -11,7 +14,11 @@ namespace Codigo
         private int reputacion; //reputacion real 
         private int reputacionRelativa; //Reputacion que ayudara a controlar la cantidad de recompensas
 
-        /*Permite construir un usuario*/
+        /// <summary>
+        /// Permite crear un usuario
+        /// </summary>
+        /// <param name="username">String.</param>
+        /// <param name="pass">String.</param>
         public Usuario(string username, string pass)
         {
             this.username = username;
@@ -19,50 +26,82 @@ namespace Codigo
             this.reputacion = 1000;
             this.reputacionRelativa = 1000;
         }
-        /*Perimite obtener el username del usuario
-        @return corresponde a un String con el nombre del usuario*/
+
+        /// <summary>
+        /// Permite obtener el nombre de usuario
+        /// </summary>
+        /// <returns>
+        /// String corresponde al username.
+        /// </returns>
         public string getUsername()
         {
             return username;
         }
-        /*Perimite obtener el pass del usuario
-        @return corresponde a un String con la contraseña del usuario*/
+
+        /// <summary>
+        /// Permite obtener el pass del usuario
+        /// </summary>
+        /// <returns>
+        /// String que corresponde al pass.
+        /// </returns>
         public String getPass()
         {
             return pass;
         }
-        /*Perimite obtener reputacion obsoluta del usuario
-        @return corresponde a un entero con la reputacion absoluta del usuario*/
+
+        /// <summary>
+        /// Permite obtener la reputacion del usuario
+        /// </summary>
+        /// <returns>
+        /// Numero que corresponde a la reputacion.
+        /// </returns>
         public int getReputacion()
         {
             return reputacion;
         }
-        /*Perimite obtener reputacion relativa del usuario
-        @return corresponde a un entero con la reputacion relativa del usuario*/
+
+        /// <summary>
+        /// Permite obtener la reputacion relativa
+        /// </summary>
+        /// <returns>
+        /// Entero con la reputacion relativa
+        /// </returns>
         public int getReputacionRelativa()
         {
             return reputacionRelativa;
         }
-        /*Perimite restar reputacion relativa al usuario
-        @param Reputacion corresponde a la reputacion ofrecida*/
+
+        /// <summary>
+        /// Permite agregar restar a la reputacion relativa
+        /// </summary>
+        /// <param name="Reputacion">Entero.</param>
         public void restarReputacionRelativa(int Reputacion)
         {
             this.reputacionRelativa = this.reputacionRelativa - Reputacion;
         }
-        /*Perimite restar reputacion obsoluta al usuario
-        @param Reputacion corresponde a la reputacion ofrecida*/
+
+        /// <summary>
+        /// Permite agregar restar a la reputacion obsoluta
+        /// </summary>
+        /// <param name="Reputacion">Entero.</param>
         public void restarReputacionAbsoluta(int Reputacion)
         {
             this.reputacion = this.reputacion - Reputacion;
         }
-        /*Perimite sumar reputacion obsoluta al usuario
-        @param Reputacion corresponde a la reputacion ofrecida*/
+
+        /// <summary>
+        /// Permite agregar sumar a la reputacion absoluta
+        /// </summary>
+        /// <param name="Reputacion">Entero.</param>
         public void sumarReputacionAbsoluta(int Reputacion)
         {
             this.reputacion = this.reputacion + Reputacion;
         }
-        /*Perimite sumar reputacion relativa al usuario
-        @param Reputacion corresponde a la reputacion ofrecida*/
+
+        /// <summary>
+        /// Permite agregar restar a la reputacion relativa
+        /// </summary>
+        /// <param name="Reputacion">Entero.</param>
         public void sumarReputacionRelativa(int Reputacion)
         {
             this.reputacionRelativa = this.reputacionRelativa + Reputacion;

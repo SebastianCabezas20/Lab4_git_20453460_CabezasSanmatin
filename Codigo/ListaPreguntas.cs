@@ -4,31 +4,48 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase lista de preguntas
+    /// </summary>
     public class ListaPreguntas
     {
         List<Pregunta> preguntas;
 
+        /// <summary>
+        /// Crea una lista preguntas
+        /// </summary>
         public ListaPreguntas()
         {
             this.preguntas = new List<Pregunta>();
         }
-        /*
-        Permite agregar pregunta a lista de preguntas*/
+
+        /// <summary>
+        /// Agrega una pregunta a la lista de preguntas
+        /// </summary>
+        /// <param name="pregunta">Clase pregunta.</param>
         public void agregarPregunta(Pregunta pregunta)
         {
             this.preguntas.Add(pregunta);
         }
-        /*Permite obtener la cantidad de preguntas que hay en la lista
-        @return cantidad de preguntas
-        */
+
+        /// <summary>
+        /// Se obtiene la cantidad de preguntas de la lista.
+        /// </summary>
+        /// <returns>
+        /// Retorna un numero con la cantidad de preguntas
+        /// </returns>
         public int cantidadPreguntas()
         {
             return this.preguntas.Count;
         }
 
-        /*Permite verificar que existe ID 
-        @param ID, ID a verificar
-        @return boolean que indicara si se verifica*/
+        /// <summary>
+        /// Verifica si el id esta en la lista de preguntas.
+        /// </summary>
+        /// <returns>
+        /// booleano que indica si existe el ID
+        /// </returns>
+        /// <param name="ID">Un numero entero que corresponde al ID.</param>
         public bool verificarIDPregunta(int ID)
         {
             for (int i = 0; i < this.preguntas.Count; i++)
@@ -40,9 +57,14 @@ namespace Codigo
             }
             return false;
         }
-        /*Permite obtener pregunta de lista preguntas mediante ID 
-         @param ID, ID a buscar
-         @return Pregunta, clase pregunta que se buscaba*/
+
+        /// <summary>
+        /// Busca una pregunta mediante un ID.
+        /// </summary>
+        /// <returns>
+        /// Clase pregunta.
+        /// </returns>
+        /// <param name="ID">Un entero que corresponde a un ID.</param>
         public Pregunta getPregunta(int ID)
         {
             for (int i = 0; i < this.preguntas.Count; i++)
@@ -54,9 +76,14 @@ namespace Codigo
             }
             return null;
         }
-        /*Permite obtener pregunta de lista preguntas mediante index 
-        @param index a buscar
-        @return Pregunta, clase pregunta que se buscaba*/
+
+        /// <summary>
+        /// Obtiene una pregunta mediante el index
+        /// </summary>
+        /// <returns>
+        /// Clase pregunta 
+        /// </returns>
+        /// <param name="index">Numero entero que corresponde al index.</param>
         public Pregunta getPreguntaIndex(int index)
         {
             return this.preguntas[index];

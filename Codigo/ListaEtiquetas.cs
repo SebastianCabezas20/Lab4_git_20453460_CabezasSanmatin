@@ -4,43 +4,47 @@ using System.Text;
 
 namespace Codigo
 {
+    /// <summary>
+    /// Clase de la lista de etiquetas
+    /// </summary>
     public class ListaEtiquetas
     {
-        List<Etiqueta> listaEtiquetas; //ArrayList que contendra las Etiquetas
-        /*crea la lista de etiquetas*/
+        List<Etiqueta> listaEtiquetas; //List que contendra las Etiquetas
+
+        /// <summary>
+        /// Crea una lista con etiquetas
+        /// </summary>
         public ListaEtiquetas()
         {
             this.listaEtiquetas = new List<Etiqueta>();
         }
-        /*
-        agrega una etiqueta al stack
-        @param etiqueta, corresponde a una clase etiqueta*/
+
+        /// <summary>
+        /// Agrega una etiqueta a la lista de etiquetas.
+        /// </summary>
+        /// <param name="etiqueta">Clase etiqueta</param>
         public void agregarEtiqueta(Etiqueta etiqueta)
         {
             this.listaEtiquetas.Add(etiqueta);
         }
 
-
-        /*
-        Permite verificar si existe nombre en la lista de etiquetas
-        @param nombreEtiqueta, corresponde a nombre de etiqueta a buscar
-        @return boolean que indica si se verifica o no*/
-        public bool verificarNombre(String nombreEtiqueta)
-        {
-            for (int i = 0; i < this.listaEtiquetas.Count; i++)
-            {
-                if (this.listaEtiquetas[i].getEtiqueta().Equals(nombreEtiqueta))
-                { //Si existe el nombre en la lista de etiquetas
-                    return true;
-                }
-            }
-            return false;
-        }
+        /// <summary>
+        /// Obtener la cantidad de etiquetas que contiene la lista
+        /// </summary>
+        /// <returns>
+        /// Numero con la cantidad de etiquetas
+        /// </returns>
         public int cantidadEtiquetas()
         {
             return this.listaEtiquetas.Count;
         }
-
+        /// <summary>
+        /// Mediante un index, se obtiene una etiqueta
+        /// </summary>
+        /// <returns>
+        /// Clase etiqueta
+        /// </returns>
+        /// <param name="index">Un numero entero.</param>
         public Etiqueta getEtiqueta(int index)
         {
             return this.listaEtiquetas[index];
