@@ -108,13 +108,13 @@ namespace Codigo
         /// Permite obtener la fechad de la respuesta.
         /// </summary>
         /// <returns>
-        /// Date fecha de la respuesta.
+        /// String fecha de la respuesta.
         /// </returns>
-        public DateTime GetDate
+        public String GetDate
         {
             get
             {
-                return this.fecha;
+                return this.fecha.ToShortDateString();
             }
         }
 

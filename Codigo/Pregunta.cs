@@ -65,13 +65,13 @@ namespace Codigo
         /// Obtener la fecha de la pregunta
         /// </summary>
         /// <returns>
-        /// Date con la fecha de la pregunta.
+        /// String con la fecha de la pregunta.
         /// </returns>
-        public DateTime GetDate
+        public String GetDate
         {
             get
             {
-                return this.fecha;
+                return this.fecha.ToShortDateString();
             }
         }
 

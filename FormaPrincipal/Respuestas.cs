@@ -64,6 +64,8 @@ namespace FormaPrincipal
                     {
                         dataGridViewRespuestas.Rows[indexData].Cells[4].Value = "ACEPTADA";
                     }
+                    dataGridViewRespuestas.Rows[indexData].Cells[5].Value = sistema.GetListaRespuestas.gerRespuetaIndex(i).getVotoPositivos;
+                    dataGridViewRespuestas.Rows[indexData].Cells[6].Value = sistema.GetListaRespuestas.gerRespuetaIndex(i).getVotoNegativos;
 
                 }
             }
@@ -114,6 +116,8 @@ namespace FormaPrincipal
                 dataGridViewRespuestas.Rows[indexData].Cells[3].Value = sistema.GetListaRespuestas.gerRespuetaIndex(index).GetDate;
                 dataGridViewRespuestas.Rows[indexData].Cells[4].Value = "NO ACEPTADA";
                 textBoxContenidoRespuesta.Text = "";
+                dataGridViewRespuestas.Rows[indexData].Cells[5].Value = sistema.GetListaRespuestas.gerRespuetaIndex(index).getVotoPositivos;
+                dataGridViewRespuestas.Rows[indexData].Cells[6].Value = sistema.GetListaRespuestas.gerRespuetaIndex(index).getVotoNegativos;
             }
         }
 

@@ -29,7 +29,7 @@ namespace FormaPrincipal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("ListViewGroupEtiquetas", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("ListViewGroupEtiquetas", System.Windows.Forms.HorizontalAlignment.Left);
             this.dataGridViewRespuestas = new System.Windows.Forms.DataGridView();
             this.buttonAgregarRespuesta = new System.Windows.Forms.Button();
             this.textBoxContenidoRespuesta = new System.Windows.Forms.TextBox();
@@ -51,6 +51,8 @@ namespace FormaPrincipal
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVotosPositivos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNegativos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRespuestas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,13 +65,15 @@ namespace FormaPrincipal
             this.ColumnAutor,
             this.ColumnID,
             this.ColumnFecha,
-            this.ColumnEstado});
-            this.dataGridViewRespuestas.Location = new System.Drawing.Point(147, 241);
+            this.ColumnEstado,
+            this.ColumnVotosPositivos,
+            this.ColumnNegativos});
+            this.dataGridViewRespuestas.Location = new System.Drawing.Point(12, 241);
             this.dataGridViewRespuestas.MultiSelect = false;
             this.dataGridViewRespuestas.Name = "dataGridViewRespuestas";
             this.dataGridViewRespuestas.ReadOnly = true;
             this.dataGridViewRespuestas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewRespuestas.Size = new System.Drawing.Size(588, 150);
+            this.dataGridViewRespuestas.Size = new System.Drawing.Size(843, 150);
             this.dataGridViewRespuestas.TabIndex = 0;
             // 
             // buttonAgregarRespuesta
@@ -158,7 +162,7 @@ namespace FormaPrincipal
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 260);
+            this.label1.Location = new System.Drawing.Point(758, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 10;
@@ -167,7 +171,7 @@ namespace FormaPrincipal
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 287);
+            this.label2.Location = new System.Drawing.Point(740, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 11;
@@ -176,7 +180,7 @@ namespace FormaPrincipal
             // labelCantidadLikes
             // 
             this.labelCantidadLikes.AutoSize = true;
-            this.labelCantidadLikes.Location = new System.Drawing.Point(91, 259);
+            this.labelCantidadLikes.Location = new System.Drawing.Point(791, 179);
             this.labelCantidadLikes.Name = "labelCantidadLikes";
             this.labelCantidadLikes.Size = new System.Drawing.Size(35, 13);
             this.labelCantidadLikes.TabIndex = 12;
@@ -185,7 +189,7 @@ namespace FormaPrincipal
             // labelCantidadDislike
             // 
             this.labelCantidadDislike.AutoSize = true;
-            this.labelCantidadDislike.Location = new System.Drawing.Point(94, 287);
+            this.labelCantidadDislike.Location = new System.Drawing.Point(794, 207);
             this.labelCantidadDislike.Name = "labelCantidadDislike";
             this.labelCantidadDislike.Size = new System.Drawing.Size(35, 13);
             this.labelCantidadDislike.TabIndex = 13;
@@ -193,10 +197,10 @@ namespace FormaPrincipal
             // 
             // listViewEtiquetas
             // 
-            listViewGroup2.Header = "ListViewGroupEtiquetas";
-            listViewGroup2.Name = "Etiquetas";
+            listViewGroup1.Header = "ListViewGroupEtiquetas";
+            listViewGroup1.Name = "Etiquetas";
             this.listViewEtiquetas.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup2});
+            listViewGroup1});
             this.listViewEtiquetas.HideSelection = false;
             this.listViewEtiquetas.Location = new System.Drawing.Point(147, 182);
             this.listViewEtiquetas.Name = "listViewEtiquetas";
@@ -219,7 +223,7 @@ namespace FormaPrincipal
             this.ColumnContenido.HeaderText = "Contenido";
             this.ColumnContenido.Name = "ColumnContenido";
             this.ColumnContenido.ReadOnly = true;
-            this.ColumnContenido.Width = 250;
+            this.ColumnContenido.Width = 300;
             // 
             // ColumnAutor
             // 
@@ -246,11 +250,23 @@ namespace FormaPrincipal
             this.ColumnEstado.Name = "ColumnEstado";
             this.ColumnEstado.ReadOnly = true;
             // 
+            // ColumnVotosPositivos
+            // 
+            this.ColumnVotosPositivos.HeaderText = "Positivos";
+            this.ColumnVotosPositivos.Name = "ColumnVotosPositivos";
+            this.ColumnVotosPositivos.ReadOnly = true;
+            // 
+            // ColumnNegativos
+            // 
+            this.ColumnNegativos.HeaderText = "Negativos";
+            this.ColumnNegativos.Name = "ColumnNegativos";
+            this.ColumnNegativos.ReadOnly = true;
+            // 
             // Respuestas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 485);
+            this.ClientSize = new System.Drawing.Size(906, 485);
             this.Controls.Add(this.labelContenidoPregunta);
             this.Controls.Add(this.listViewEtiquetas);
             this.Controls.Add(this.labelCantidadDislike);
@@ -299,5 +315,7 @@ namespace FormaPrincipal
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVotosPositivos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNegativos;
     }
 }

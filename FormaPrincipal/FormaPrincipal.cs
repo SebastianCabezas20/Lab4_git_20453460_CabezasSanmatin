@@ -214,8 +214,19 @@ namespace FormaPrincipal
             sistema.Register("user1", "pass1");
             sistema.Register("user2", "pass2");
             sistema.Register("user3", "pass3");
-           
 
+
+            ListaEtiquetas etiquetas = new ListaEtiquetas();
+            etiquetas.agregarEtiqueta(new Etiqueta("C#", "Descripcion de etiqueta 1"));
+            etiquetas.agregarEtiqueta(new Etiqueta("Python", "Descripcion de etiqueta 2"));
+            //Agregar preguntas
+            sistema.login("user1", "pass1");
+            sistema.ask("Titulo de pregunta 1", etiquetas, "Contenido de pregunta1");
+            sistema.login("user2", "pass2");
+            sistema.ask("Titulo de pregunta 2", etiquetas, "contenido de pregunta2");
+            sistema.login("user3", "pass3");
+            sistema.ask("Titulo de la pregunta 3", etiquetas, "contenido de pregunta 3");
+            sistema.logout("user3", "pass3");
 
             //Agregar etiquetas
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Java", "Descripcion de la etiqueta 1"));
@@ -223,8 +234,19 @@ namespace FormaPrincipal
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Python", "Descripcion de la etiqueta 3"));
             sistema.GetListaEtiquetas.agregarEtiqueta(new Etiqueta("Prolog", "Descripcion de la etiqueta 4"));
 
+            //Se cargan las etiquetas
+            for (int i = 0; i < sistema.GetListaPreguntas.cantidadPreguntas(); i++)
+            {
+                int index = dataGridViewPreguntas.Rows.Add();
+                dataGridViewPreguntas.Rows[index].Cells[0].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getTitulo();
+                dataGridViewPreguntas.Rows[index].Cells[1].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getContenido();
+                dataGridViewPreguntas.Rows[index].Cells[2].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getID();
+                dataGridViewPreguntas.Rows[index].Cells[3].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).GetDate;
+                dataGridViewPreguntas.Rows[index].Cells[4].Value = sistema.GetListaPreguntas.getPreguntaIndex(index).getAutor();
 
-           
+
+            }
+
         }
 
         /// <summary>
